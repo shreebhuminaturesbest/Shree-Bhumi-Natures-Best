@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -25,11 +26,11 @@ export function Navbar() {
     { name: "CONTACT US", href: "#contact" },
   ];
 
-  const Logo = () => (
+  const Logo = ({ isDark = false }: { isDark?: boolean }) => (
     <div className="flex flex-col items-start leading-none pl-3 border-l-4 border-secondary">
       <div className="flex items-baseline gap-1.5">
-        <span className="text-white font-black text-xl md:text-2xl tracking-tighter uppercase">SHREE BHUMI</span>
-        <span className="text-white font-bold text-[10px] md:text-xs opacity-80 uppercase tracking-widest">PVT LTD</span>
+        <span className={cn("font-black text-xl md:text-2xl tracking-tighter uppercase", isDark ? "text-primary" : "text-white")}>SHREE BHUMI</span>
+        <span className={cn("font-bold text-[10px] md:text-xs opacity-80 uppercase tracking-widest", isDark ? "text-primary" : "text-white")}>PVT LTD</span>
       </div>
       <span className="text-secondary font-bold text-[10px] md:text-xs tracking-[0.2em] mt-0.5 uppercase">NATURE&apos;S BEST</span>
     </div>
@@ -37,7 +38,7 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Info Bar */}
+      {/* Top Info Bar - Remains Green */}
       <div className="bg-primary text-white py-3 hidden md:block border-b border-secondary/30">
         <div className="container mx-auto px-6 flex justify-between items-center text-sm font-medium">
           <div className="flex gap-6 items-center">
@@ -65,35 +66,36 @@ export function Navbar() {
         </div>
       </div>
 
+      {/* Main Logo Nav Bar - Updated to White Background */}
       <header
         className={cn(
-          "fixed left-0 right-0 z-50 transition-all duration-300",
+          "fixed left-0 right-0 z-50 transition-all duration-300 border-b border-border/10",
           scrolled 
-            ? "bg-primary/95 shadow-lg py-3 top-0" 
-            : "bg-primary md:top-[49px] py-5"
+            ? "bg-white/95 shadow-lg py-3 top-0" 
+            : "bg-white md:top-[49px] py-5"
         )}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link href="/" className="flex items-center justify-center">
-            <Logo />
+            <Logo isDark={true} />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - Dark Text for White Background */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[13px] font-bold text-white hover:text-secondary transition-colors nav-link-underline tracking-wide"
+                className="text-[13px] font-bold text-primary hover:text-secondary transition-colors nav-link-underline tracking-wide"
               >
                 {link.name}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle - Dark Icon for White Background */}
           <button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-primary p-2"
             onClick={() => setIsOpen(true)}
           >
             <Menu className="w-6 h-6" />
@@ -110,7 +112,7 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 py-5 flex items-center justify-between border-b border-white/10">
           <Link href="/" onClick={() => setIsOpen(false)}>
-            <Logo />
+            <Logo isDark={false} />
           </Link>
           <button
             className="text-white p-2"
