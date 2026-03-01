@@ -1,68 +1,42 @@
 
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { Globe, Users, Award, Calendar } from "lucide-react";
+import React from 'react';
 
-const stats = [
-  { label: "Countries Exported", value: 25, icon: Globe, suffix: "+" },
-  { label: "Satisfied Clients", value: 150, icon: Users, suffix: "+" },
-  { label: "Years Experience", value: 12, icon: Calendar, suffix: "+" },
-  { label: "Certifications", value: 8, icon: Award, suffix: "" },
+const features = [
+  { title: "Premium Quality", desc: "Highest standards of purity and taste in every batch." },
+  { title: "Global Export", desc: "Seamless supply chain across 25+ countries worldwide." },
+  { title: "Fast Delivery", desc: "Swift processing and reliable logistics for your orders." },
+  { title: "Organic Source", desc: "100% natural products direct from certified farms." },
+  { title: "Expert Support", desc: "Dedicated export managers available for 24/7 assistance." },
 ];
-
-function Counter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    let start = 0;
-    const end = value;
-    const duration = 2000;
-    const increment = end / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isVisible, value]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
 
 export function Stats() {
   return (
-    <section className="py-20 bg-primary text-white">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-          {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center group">
-              <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors duration-300">
-                <stat.icon className="w-8 h-8 text-secondary group-hover:text-primary transition-colors" />
+        <div className="flex flex-wrap justify-center gap-10 md:gap-14">
+          {features.map((item, i) => (
+            <div key={i} className="group relative w-[220px] h-[300px] rounded-[30px] bg-white p-8 border-2 border-border transition-all duration-500 ease-out overflow-visible hover:border-primary hover:shadow-[0_10px_30px_-5px_rgba(0,90,43,0.15)] flex flex-col items-center justify-center text-center cursor-pointer">
+              <div className="h-full flex flex-col items-center justify-center gap-4">
+                <div className="mb-2 transform transition-transform duration-500 group-hover:scale-110">
+                  <img 
+                    src="https://jbrotherexports.com/wp-content/themes/jbrotherexports/assets/img/key.png" 
+                    alt="Key Feature" 
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <p className="text-xl font-bold text-primary uppercase tracking-tight leading-tight">
+                  {item.title}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-4xl md:text-5xl font-bold mb-2">
-                <Counter value={stat.value} suffix={stat.suffix} />
-              </h3>
-              <p className="text-white/60 font-medium">{stat.label}</p>
+              
+              <button className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[125%] w-[70%] rounded-full border-none bg-primary text-white text-sm font-bold py-3 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-[-50%] group-hover:opacity-100 shadow-xl whitespace-nowrap">
+                More info
+              </button>
             </div>
           ))}
         </div>
