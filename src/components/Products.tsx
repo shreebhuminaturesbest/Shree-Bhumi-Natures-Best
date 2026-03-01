@@ -114,32 +114,32 @@ const products = [
 
   // Masala Powders (4)
   {
-    name: "Garam Masala",
+    name: "Coriander Powder",
     category: "Masala Powders",
-    image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=600",
-    description: "A warming blend of elite spices for an authentic Indian finishing touch.",
-    hint: "garam masala"
+    image: "https://i.ibb.co/hRJCqzkr/Whats-App-Image-2026-02-18-at-8-57-55-AM-1.jpg",
+    description: "Pure and aromatic coriander powder made from the finest dried seeds.",
+    hint: "coriander powder"
   },
   {
-    name: "Sambar Powder",
+    name: "Turmeric Powder",
     category: "Masala Powders",
-    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600",
-    description: "Traditional South Indian recipe for the perfect aromatic sambar broth.",
-    hint: "curry powder"
-  },
-  {
-    name: "Kitchen King",
-    category: "Masala Powders",
-    image: "https://images.unsplash.com/photo-1505394033343-4edaf4c22f9d?q=80&w=600",
-    description: "The ultimate versatile blend for vegetarian curries and gravies.",
-    hint: "spice blend"
+    image: "https://i.ibb.co/6cGv78nT/Whats-App-Image-2026-02-23-at-9-21-02-AM.jpg",
+    description: "High-curcumin turmeric powder, processed to retain its natural healing properties.",
+    hint: "turmeric powder"
   },
   {
     name: "Biryani Masala",
     category: "Masala Powders",
-    image: "https://images.unsplash.com/photo-1596783074918-c84cb0653dfa?q=80&w=600",
-    description: "Exotic and fragrant spice mix for world-class Indian Biryani rice.",
+    image: "https://i.ibb.co/0R7hNBMg/Whats-App-Image-2026-02-23-at-9-21-04-AM.jpg",
+    description: "An exotic and fragrant blend of spices for the perfect authentic biryani.",
     hint: "biryani spice"
+  },
+  {
+    name: "Armoor Mirchi Powder",
+    category: "Masala Powders",
+    image: "https://i.ibb.co/Xx7GcTQQ/Whats-App-Image-2026-02-23-at-10-40-03-AM.jpg",
+    description: "Premium quality chili powder from Armoor, known for its deep red color and balanced heat.",
+    hint: "chili powder"
   }
 ];
 
