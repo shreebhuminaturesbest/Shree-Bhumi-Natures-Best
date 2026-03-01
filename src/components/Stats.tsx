@@ -8,7 +8,6 @@ const features = [
   { title: "Global Export", desc: "Seamless supply chain across 25+ countries worldwide." },
   { title: "Fast Delivery", desc: "Swift processing and reliable logistics for your orders." },
   { title: "Organic Source", desc: "100% natural products direct from certified farms." },
-  { title: "Expert Support", desc: "Dedicated export managers available for 24/7 assistance." },
 ];
 
 export function Stats() {
