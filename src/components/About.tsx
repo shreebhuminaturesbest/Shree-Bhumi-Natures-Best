@@ -5,16 +5,16 @@ import { CheckCircle2, Globe } from "lucide-react";
 import Link from "next/link";
 
 export function About() {
-  const agriExportsImageUrl = "https://ml0k8npvi8h7.i.optimole.com/cb:K2_q.4551d/w:1000/h:667/q:mauto/f:best/https://freshlineexim.com/wp-content/uploads/2023/02/5a874b9ace.jpg";
-  const exportMapUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1080";
-  const spicesImageUrl = "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzc2MzM2MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080";
+  const welcomeImageUrl = "https://ml0k8npvi8h7.i.optimole.com/cb:K2_q.4551d/w:1000/h:667/q:mauto/f:best/https://freshlineexim.com/wp-content/uploads/2023/02/5a874b9ace.jpg";
+  const purityImageUrl = "https://ml0k8npvi8h7.i.optimole.com/cb:K2_q.4551d/w:1000/h:667/q:mauto/f:best/https://freshlineexim.com/wp-content/uploads/2023/02/b0f8ee0ccf.jpg";
+  const qualityImageUrl = "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzc2MzM2MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080";
   
   const sections = [
     {
       subtitle: "WELCOME TO",
       title: "SHREE BHUMI NATURES BEST PVT LTD",
       text: "In 2009, our group emerged onto the scene with a clear mission: to deliver top-notch products to consumers. Our journey began with a steadfast commitment to quality. As we steadily gained recognition for our dedication to excellence, we ventured into various sectors, including the premium spices and agricultural grains exports. Over time, our relentless pursuit of superior quality propelled us to the forefront of the market, establishing Shree Bhumi as a leading name in the realm of global food exports, not only within Gujarat but throughout India.",
-      image: agriExportsImageUrl,
+      image: welcomeImageUrl,
       hint: "premium grains",
       reversed: false
     },
@@ -22,15 +22,15 @@ export function About() {
       subtitle: "OUR MISSION",
       title: "DELIVERING PURITY GLOBALLY",
       text: "Our core mission is to bridge the gap between authentic Indian farms and global kitchens. We ensure that every product, from our ground spices to our premium grains, meets the highest international food safety standards. We believe in sustainable growth that benefits both the farmers who grow our products and the consumers who trust our quality across 25+ countries.",
-      image: exportMapUrl,
-      hint: "export map",
+      image: purityImageUrl,
+      hint: "export supply",
       reversed: true
     },
     {
       subtitle: "QUALITY ASSURANCE",
       title: "EXCELLENCE IN EVERY BATCH",
       text: "Shree Bhumi Natures Best (SBNB) employs state-of-the-art processing units adhering to FSSAI & ISO standards. Our transparency in the supply chain provides full traceability, ensuring that 'Natures Best' is not just a name, but a promise kept in every shipment. We offer customized packaging for retail and bulk orders, catering to specific market needs worldwide.",
-      image: spicesImageUrl,
+      image: qualityImageUrl,
       hint: "quality spices",
       reversed: false
     }
