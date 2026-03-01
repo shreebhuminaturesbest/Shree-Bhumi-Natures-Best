@@ -2,8 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, Shield, Leaf, Ship, Star, Globe, MessageCircle } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { CheckCircle2, Globe, MessageCircle } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Link from "next/link";
 
@@ -48,15 +47,6 @@ export function About() {
 
       {sections.map((section, idx) => (
         <div key={idx} className={`py-24 ${idx % 2 !== 0 ? 'bg-primary/5' : 'bg-white'} overflow-hidden relative`}>
-          {/* Vertical Enquiry Badge (only on first section as per screenshot) */}
-          {idx === 0 && (
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex">
-              <Link href="#contact" className="bg-primary text-white py-10 px-3 [writing-mode:vertical-lr] rotate-180 font-bold tracking-widest text-sm rounded-r-2xl hover:bg-secondary transition-colors cursor-pointer">
-                Enquiry Now
-              </Link>
-            </div>
-          )}
-
           <div className="container mx-auto px-6">
             <div className={`flex flex-col lg:flex-row items-center gap-16 ${section.reversed ? 'lg:flex-row-reverse' : ''}`}>
               <div className="lg:w-1/2">
