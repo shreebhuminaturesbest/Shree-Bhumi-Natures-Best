@@ -61,7 +61,7 @@ export function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-8 uppercase tracking-tighter border-b border-secondary/30 pb-2 inline-block">Product Catalog</h4>
             <ul className="space-y-4">
-              {["Premium Spices", "Authentic Pickles", "Fresh Vegetables", "Masala Powders"].map((item) => (
+              {["Premium Spices", "Authentic Pickles", "Quality Grains", "Masala Powders"].map((item) => (
                 <li key={item}>
                   <Link href="#products" className="text-white/70 hover:text-secondary transition-colors flex items-center gap-2 group text-sm font-bold">
                     <ChevronRight className="w-4 h-4 text-secondary opacity-0 group-hover:opacity-100 transition-all -ml-6 group-hover:ml-0" />

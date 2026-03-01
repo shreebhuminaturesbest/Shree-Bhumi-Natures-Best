@@ -20,13 +20,13 @@ export function ExportExpress() {
               Fresh Export Express
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-black leading-[1.1] mb-6 md:mb-8 uppercase tracking-tighter">
-              Global Fresh Fruits &<br />
-              Vegetables Supply
+              Global Fresh Grains &<br />
+              Spices Supply
             </h2>
             <p className="text-black/80 text-sm md:text-lg leading-relaxed mb-8 md:mb-10 max-w-xl font-medium">
-              Driven by a passion for delivering fresh, high-quality produce, our mission 
-              is to consistently provide a wide array of organically cultivated vegetables 
-              and fruits, ensuring that our clients across the globe experience the 
+              Driven by a passion for delivering premium quality produce, our mission 
+              is to consistently provide a wide array of organically cultivated grains 
+              and spices, ensuring that our clients across the globe experience the 
               authentic flavors and nourishment that nature offers.
             </p>
             <div>

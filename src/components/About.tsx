@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -22,7 +21,7 @@ export function About() {
     {
       subtitle: "OUR MISSION",
       title: "DELIVERING PURITY GLOBALLY",
-      text: "Our core mission is to bridge the gap between authentic Indian farms and global kitchens. We ensure that every product, from our ground spices to our whole vegetables, meets the highest international food safety standards. We believe in sustainable growth that benefits both the farmers who grow our products and the consumers who trust our quality across 25+ countries.",
+      text: "Our core mission is to bridge the gap between authentic Indian farms and global kitchens. We ensure that every product, from our ground spices to our premium grains, meets the highest international food safety standards. We believe in sustainable growth that benefits both the farmers who grow our products and the consumers who trust our quality across 25+ countries.",
       image: exportMapUrl,
       hint: "export map",
       reversed: true

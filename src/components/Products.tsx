@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-const categories = ["Spices", "Pickles", "Vegetables", "Masala Powders"];
+const categories = ["Spices", "Pickles", "Grains", "Masala Powders"];
 
 const products = [
   // Spices
@@ -81,34 +81,34 @@ const products = [
     hint: "mixed pickle"
   },
 
-  // Vegetables
+  // Grains
   {
-    name: "Fresh Ginger",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?q=80&w=600",
-    description: "Grade-A fresh ginger roots, cleaned and sorted for global export standards.",
-    hint: "fresh ginger"
+    name: "Long-Grain Basmati",
+    category: "Grains",
+    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=600",
+    description: "Aromatic extra-long grain Basmati rice, aged to perfection for non-sticky texture.",
+    hint: "basmati rice"
   },
   {
-    name: "Red Onions",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1508747703725-7197771375a0?q=80&w=600",
-    description: "Firm and pungent red onions, perfect for retail and commercial kitchens.",
-    hint: "red onion"
+    name: "Premium Durum Wheat",
+    category: "Grains",
+    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=600",
+    description: "High-protein golden wheat kernels sourced from fertile Indian plains.",
+    hint: "wheat grains"
   },
   {
-    name: "Green Chilies",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1588252303782-cb80119abd6d?q=80&w=600",
-    description: "Crisp and fiery green chilies, packed to maintain moisture and heat.",
-    hint: "green chili"
+    name: "Green Moong Dal",
+    category: "Grains",
+    image: "https://images.unsplash.com/photo-1547055302-39f50f701f4c?q=80&w=600",
+    description: "Nutritious, high-protein pulses cleaned and sorted for global kitchen standards.",
+    hint: "moong dal"
   },
   {
-    name: "Fresh Garlic",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=600",
-    description: "Large, white garlic bulbs with strong aroma and high essential oil content.",
-    hint: "fresh garlic"
+    name: "Organic Pearl Millets",
+    category: "Grains",
+    image: "https://images.unsplash.com/photo-16260199015de-643f07a61d15?q=80&w=600",
+    description: "Gluten-free, nutrient-rich ancient grains packed with essential minerals.",
+    hint: "pearl millet"
   },
 
   // Masala Powders
