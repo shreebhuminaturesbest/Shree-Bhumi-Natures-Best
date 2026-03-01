@@ -12,10 +12,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-secondary rounded-none flex items-center justify-center">
                 <Leaf className="text-primary w-6 h-6" />
               </div>
-              <span className="text-2xl font-bold">SHREE BHUMI <span className="text-secondary">SBNB</span></span>
+              <span className="text-xl font-bold tracking-tighter">SHREE BHUMI <span className="text-secondary block text-xs uppercase tracking-widest mt-1">Natures Best Pvt Ltd</span></span>
             </Link>
             <p className="text-white/60 leading-relaxed">
               Global leaders in premium Indian food exports. Dedicated to quality, purity, and sustainable farming practices.
@@ -25,9 +25,9 @@ export function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-8">Quick Links</h4>
             <ul className="space-y-4">
-              {["Home", "Products", "About Us", "Gallery", "Contact"].map((item) => (
+              {["Home", "About Us", "Products", "Technology", "Contact Us"].map((item) => (
                 <li key={item}>
-                  <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white/60 hover:text-secondary transition-colors flex items-center gap-2 group">
+                  <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-white/60 hover:text-secondary transition-colors flex items-center gap-2 group text-sm font-medium">
                     <ChevronRight className="w-4 h-4 text-secondary opacity-0 group-hover:opacity-100 transition-all" />
                     {item}
                   </Link>
@@ -41,7 +41,7 @@ export function Footer() {
             <ul className="space-y-4">
               {["Spices", "Pickles", "Vegetables", "Masala Powders", "Organic Tea"].map((item) => (
                 <li key={item}>
-                  <Link href="#products" className="text-white/60 hover:text-secondary transition-colors flex items-center gap-2 group">
+                  <Link href="#products" className="text-white/60 hover:text-secondary transition-colors flex items-center gap-2 group text-sm font-medium">
                     <ChevronRight className="w-4 h-4 text-secondary opacity-0 group-hover:opacity-100 transition-all" />
                     {item}
                   </Link>
@@ -55,21 +55,21 @@ export function Footer() {
             <ul className="space-y-6">
               <li className="flex gap-4">
                 <MapPin className="text-secondary shrink-0" />
-                <span className="text-white/60">Global Headquarters, India</span>
+                <span className="text-white/60 text-sm leading-relaxed">Global Headquarters, India</span>
               </li>
               <li className="flex gap-4">
                 <Phone className="text-secondary shrink-0" />
-                <span className="text-white/60">+91 9106758216</span>
+                <span className="text-white/60 text-sm">+91 9106758216</span>
               </li>
               <li className="flex gap-4">
                 <Mail className="text-secondary shrink-0" />
-                <span className="text-white/60">info@sbnbglobal.com</span>
+                <span className="text-white/60 text-sm">info@sbnbglobal.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm">
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-[10px] uppercase tracking-widest">
           <p>© {currentYear} Shree Bhumi Natures Best Pvt Ltd. All Rights Reserved.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>

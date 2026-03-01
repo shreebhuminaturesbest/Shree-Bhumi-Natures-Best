@@ -2,33 +2,34 @@
 
 import Image from "next/image";
 import { CheckCircle2, Globe, MessageCircle } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Link from "next/link";
 
 export function About() {
+  const spicesImageUrl = "https://jbrotherexports.com/wp-content/uploads/2023/02/spices.jpg";
+  
   const sections = [
     {
       subtitle: "WELCOME TO",
       title: "SHREE BHUMI NATURES BEST PVT LTD",
       text: "In 2009, our group emerged onto the scene with a clear mission: to deliver top-notch products to consumers. Our journey began with a steadfast commitment to quality. As we steadily gained recognition for our dedication to excellence, we ventured into various sectors, including the premium spices and agricultural exports. Over time, our relentless pursuit of superior quality propelled us to the forefront of the market, establishing Shree Bhumi as a leading name in the realm of global food exports, not only within Gujarat but throughout India.",
-      image: PlaceHolderImages.find(i => i.id === 'about-us')?.imageUrl || "",
-      hint: "spice plantation",
+      image: spicesImageUrl,
+      hint: "indian spices",
       reversed: false
     },
     {
       subtitle: "OUR MISSION",
       title: "DELIVERING PURITY GLOBALLY",
       text: "Our core mission is to bridge the gap between authentic Indian farms and global kitchens. We ensure that every product, from our ground spices to our whole vegetables, meets the highest international food safety standards. We believe in sustainable growth that benefits both the farmers who grow our products and the consumers who trust our quality across 25+ countries.",
-      image: PlaceHolderImages.find(i => i.id === 'hero-factory')?.imageUrl || "",
-      hint: "food factory",
+      image: spicesImageUrl,
+      hint: "spices collection",
       reversed: true
     },
     {
       subtitle: "QUALITY ASSURANCE",
       title: "EXCELLENCE IN EVERY BATCH",
       text: "Shree Bhumi Natures Best (SBNB) employs state-of-the-art processing units adhering to FSSAI & ISO standards. Our transparency in the supply chain provides full traceability, ensuring that 'Natures Best' is not just a name, but a promise kept in every shipment. We offer customized packaging for retail and bulk orders, catering to specific market needs worldwide.",
-      image: PlaceHolderImages.find(i => i.id === 'hero-vegetables')?.imageUrl || "",
-      hint: "fresh vegetables",
+      image: spicesImageUrl,
+      hint: "quality spices",
       reversed: false
     }
   ];
