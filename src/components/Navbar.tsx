@@ -2,12 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, Leaf } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,16 +67,14 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white/10 rounded-none flex items-center justify-center">
-              <Leaf className="text-secondary w-7 h-7" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-lg font-bold text-white tracking-tighter">SHREE BHUMI</span>
-              <span className="text-[7px] text-white/70 font-bold uppercase mt-1 tracking-widest">
-                Natures Best Pvt. Ltd.
-              </span>
-            </div>
+          <Link href="/" className="relative h-12 w-40 md:h-14 md:w-48">
+            <Image
+              src={logoUrl}
+              alt="Shree Bhumi Natures Best Pvt Ltd"
+              fill
+              className="object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -107,9 +108,13 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-6 py-5 flex items-center justify-between border-b border-white/10">
-          <div className="flex items-center gap-2">
-            <Leaf className="text-secondary w-6 h-6" />
-            <span className="text-xl font-bold text-white uppercase tracking-tighter">SHREE BHUMI</span>
+          <div className="relative h-10 w-32">
+            <Image
+              src={logoUrl}
+              alt="Shree Bhumi Logo"
+              fill
+              className="object-contain"
+            />
           </div>
           <button
             className="text-white p-2"

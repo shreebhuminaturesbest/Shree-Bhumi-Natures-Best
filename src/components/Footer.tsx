@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Leaf, Mail, Phone, MapPin, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const bgImageUrl = "https://i.ibb.co/v667tdY6/image.png";
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
 
   return (
     <footer className="relative text-white pt-20 pb-10 overflow-hidden">
@@ -18,7 +19,6 @@ export function Footer() {
           fill
           className="object-cover"
           sizes="100vw"
-          priority
         />
         {/* Semi-transparent Green Overlay for branding and readability */}
         <div className="absolute inset-0 bg-primary/90 mix-blend-multiply" />
@@ -27,16 +27,13 @@ export function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-secondary rounded-none flex items-center justify-center">
-                <Leaf className="text-primary w-6 h-6" />
-              </div>
-              <span className="text-xl font-bold tracking-tighter uppercase">
-                SHREE BHUMI 
-                <span className="text-secondary block text-[10px] uppercase tracking-widest mt-1">
-                  Natures Best Pvt Ltd
-                </span>
-              </span>
+            <Link href="/" className="relative h-16 w-full max-w-[200px] block">
+              <Image
+                src={logoUrl}
+                alt="Shree Bhumi Logo"
+                fill
+                className="object-contain object-left"
+              />
             </Link>
             <p className="text-white/80 leading-relaxed text-sm">
               Global leaders in premium Indian food exports. Dedicated to quality, purity, and sustainable farming practices that bridge the gap between farms and the world.
