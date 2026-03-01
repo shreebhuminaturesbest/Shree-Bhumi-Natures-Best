@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -99,14 +100,14 @@ const products = [
   {
     name: "Green Moong Dal",
     category: "Grains",
-    image: "https://images.unsplash.com/photo-1547055302-39f50f701f4c?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1585993439219-1110493ef147?q=80&w=600",
     description: "Nutritious, high-protein pulses cleaned and sorted for global kitchen standards.",
     hint: "moong dal"
   },
   {
     name: "Organic Pearl Millets",
     category: "Grains",
-    image: "https://images.unsplash.com/photo-16260199015de-643f07a61d15?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=600",
     description: "Gluten-free, nutrient-rich ancient grains packed with essential minerals.",
     hint: "pearl millet"
   },
