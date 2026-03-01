@@ -63,21 +63,21 @@ const products = [
   {
     name: "Spicy Lime",
     category: "Pickles",
-    image: "https://picsum.photos/seed/lime/600/600",
+    image: "https://images.unsplash.com/photo-1601050690597-df056fb1cd2a?q=80&w=600",
     description: "Tangy and hot lime pickle, aged naturally for deep flavor development.",
     hint: "lemon pickle"
   },
   {
     name: "Garlic Pickle",
     category: "Pickles",
-    image: "https://picsum.photos/seed/garlic/600/600",
+    image: "https://images.unsplash.com/photo-1598512752271-33f913a5af13?q=80&w=600",
     description: "Robust garlic cloves infused with a secret blend of aromatic Indian spices.",
     hint: "garlic pickle"
   },
   {
     name: "Premium Mixed Pickle",
     category: "Pickles",
-    image: "https://picsum.photos/seed/mixed/600/600",
+    image: "https://images.unsplash.com/photo-1589187151032-573a91317445?q=80&w=600",
     description: "A colorful assortment of seasonal vegetables in a rich, spicy oil base.",
     hint: "mixed pickle"
   },
@@ -116,28 +116,28 @@ const products = [
   {
     name: "Garam Masala",
     category: "Masala Powders",
-    image: "https://picsum.photos/seed/masala1/600/600",
+    image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=600",
     description: "A warming blend of elite spices for an authentic Indian finishing touch.",
     hint: "garam masala"
   },
   {
     name: "Sambar Powder",
     category: "Masala Powders",
-    image: "https://picsum.photos/seed/masala2/600/600",
+    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600",
     description: "Traditional South Indian recipe for the perfect aromatic sambar broth.",
     hint: "curry powder"
   },
   {
     name: "Kitchen King",
     category: "Masala Powders",
-    image: "https://picsum.photos/seed/masala3/600/600",
+    image: "https://images.unsplash.com/photo-1505394033343-4edaf4c22f9d?q=80&w=600",
     description: "The ultimate versatile blend for vegetarian curries and gravies.",
     hint: "spice blend"
   },
   {
     name: "Biryani Masala",
     category: "Masala Powders",
-    image: "https://picsum.photos/seed/masala4/600/600",
+    image: "https://images.unsplash.com/photo-1596783074918-c84cb0653dfa?q=80&w=600",
     description: "Exotic and fragrant spice mix for world-class Indian Biryani rice.",
     hint: "biryani spice"
   }
