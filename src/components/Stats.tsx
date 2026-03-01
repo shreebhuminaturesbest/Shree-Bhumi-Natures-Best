@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -23,26 +22,26 @@ const keyImageUrl = "https://jbrotherexports.com/wp-content/themes/jbrotherexpor
 
 export function Stats() {
   return (
-    <section className="py-24 bg-background border-b border-border">
+    <section className="py-16 md:py-24 bg-background border-b border-border">
       <div className="container mx-auto px-6">
-        <div className="flex flex-wrap justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {features.map((item, i) => (
             <div 
               key={i} 
-              className="group relative w-[280px] h-[360px] rounded-none bg-white p-10 border-2 border-border transition-all duration-500 ease-out overflow-visible hover:border-primary hover:shadow-[0_20px_50px_-12px_rgba(0,90,43,0.2)] flex flex-col items-center justify-start text-center cursor-pointer"
+              className="group relative w-full sm:w-[280px] h-[320px] md:h-[360px] rounded-none bg-white p-8 md:p-10 border-2 border-border transition-all duration-500 ease-out overflow-visible hover:border-primary hover:shadow-[0_20px_50px_-12px_rgba(0,90,43,0.2)] flex flex-col items-center justify-start text-center cursor-pointer"
             >
-              <div className="mb-8 w-24 h-24 relative flex items-center justify-center">
+              <div className="mb-6 md:mb-8 w-20 h-20 md:w-24 md:h-24 relative flex items-center justify-center">
                 <Image 
                   src={keyImageUrl} 
                   alt="key feature" 
                   width={80} 
                   height={80}
-                  className="object-contain transition-transform duration-500 group-hover:scale-110"
+                  className="object-contain transition-transform duration-500 group-hover:scale-110 w-16 h-16 md:w-20 md:h-20"
                 />
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-4">
-                <p className="text-xl font-black text-primary uppercase tracking-tight leading-none">
+              <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
+                <p className="text-lg md:text-xl font-black text-primary uppercase tracking-tight leading-tight md:leading-none">
                   {item.title}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -50,7 +49,7 @@ export function Stats() {
                 </p>
               </div>
               
-              <button className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[125%] w-[75%] rounded-none border-none bg-primary text-white text-xs font-black py-4 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-[-50%] group-hover:opacity-100 shadow-2xl tracking-widest uppercase">
+              <button className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[125%] w-[75%] rounded-none border-none bg-primary text-white text-[10px] md:text-xs font-black py-3 md:py-4 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-[-50%] group-hover:opacity-100 shadow-2xl tracking-widest uppercase">
                 More info
               </button>
             </div>

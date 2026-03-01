@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -61,7 +60,6 @@ export function Hero() {
     <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
       {/* Background Slides */}
       <div className="absolute inset-0">
-        {/* Underlayer (Previous or Next Slide) */}
         <div className="absolute inset-0 z-0">
           <Image
             src={slides[current].image}
@@ -74,7 +72,6 @@ export function Hero() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        {/* Transitioning Overlay (The Previous Slide sliding out) */}
         <div className={cn("absolute inset-0 z-10", animating ? "opacity-100" : "opacity-0")}>
            <Image
             src={slides[prev].image}
@@ -86,16 +83,17 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Modern Shutter Transition panels */}
+      {/* Modern Shatter Transition Grid */}
       {animating && (
-        <div className="absolute inset-0 z-20 flex pointer-events-none">
-          {[...Array(10)].map((_, i) => (
+        <div className="absolute inset-0 z-20 grid grid-cols-5 md:grid-cols-10 grid-rows-5 md:grid-rows-10 pointer-events-none">
+          {[...Array(100)].map((_, i) => (
             <div
               key={i}
-              className="flex-1 bg-primary animate-shutter"
+              className="bg-primary animate-shutter"
               style={{
-                animationDelay: `${i * 0.04}s`,
-                animationDuration: '0.9s'
+                animationDelay: `${Math.random() * 0.4}s`,
+                animationDuration: '0.8s',
+                animationName: 'shatter-reveal'
               }}
             />
           ))}
@@ -104,20 +102,20 @@ export function Hero() {
 
       {/* Centered Content */}
       <div className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6">
-        <div key={`text-${current}`} className="flex flex-col items-center">
-          <span className="text-secondary text-lg md:text-xl font-bold tracking-[0.4em] uppercase mb-6 animate-text-reveal">
+        <div key={`text-${current}`} className="flex flex-col items-center w-full max-w-6xl">
+          <span className="text-secondary text-xs sm:text-sm md:text-xl font-bold tracking-[0.4em] uppercase mb-4 md:mb-6 animate-text-reveal">
             {slides[current].welcome}
           </span>
           
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white mb-12 max-w-6xl leading-[1.05] uppercase animate-text-reveal [animation-delay:0.1s] drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 md:mb-12 leading-[1.1] md:leading-[1.05] uppercase animate-text-reveal [animation-delay:0.1s] drop-shadow-2xl px-4">
             {slides[current].title}
           </h1>
 
-          <div className="animate-text-reveal [animation-delay:0.3s]">
+          <div className="animate-text-reveal [animation-delay:0.3s] w-full sm:w-auto">
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-none border-2 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-primary px-16 h-16 text-xl font-black transition-all uppercase tracking-tighter"
+              className="rounded-none border-2 border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-primary px-8 md:px-16 h-14 md:h-16 text-sm sm:text-lg md:text-xl font-black transition-all uppercase tracking-tighter w-full sm:w-auto"
               asChild
             >
               <Link href="#contact">Contact Us Now</Link>
@@ -129,21 +127,21 @@ export function Hero() {
       {/* Navigation Arrows */}
       <button
         onClick={handlePrevSlide}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-40 p-3 text-white/30 hover:text-secondary transition-colors hidden md:block"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 p-3 text-white/30 hover:text-secondary transition-colors hidden sm:block"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={80} strokeWidth={1} />
+        <ChevronLeft size={64} strokeWidth={1} />
       </button>
       <button
         onClick={handleNextSlide}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-40 p-3 text-white/30 hover:text-secondary transition-colors hidden md:block"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-40 p-3 text-white/30 hover:text-secondary transition-colors hidden sm:block"
         aria-label="Next slide"
       >
-        <ChevronRight size={80} strokeWidth={1} />
+        <ChevronRight size={64} strokeWidth={1} />
       </button>
 
       {/* Progress Indicators */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-40 flex gap-6">
+      <div className="absolute bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 z-40 flex gap-4 md:gap-6">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -156,7 +154,7 @@ export function Hero() {
             }}
             className={cn(
               "h-1.5 transition-all duration-300 rounded-none",
-              i === current ? "w-24 bg-secondary" : "w-6 bg-white/20 hover:bg-white/50"
+              i === current ? "w-12 md:w-24 bg-secondary" : "w-4 md:w-6 bg-white/20 hover:bg-white/50"
             )}
           />
         ))}

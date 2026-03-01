@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -42,29 +43,29 @@ export function About() {
       <Link 
         href="https://wa.me/919106758216" 
         target="_blank"
-        className="fixed bottom-10 right-10 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
       >
-        <MessageCircle className="w-8 h-8 fill-current" />
+        <MessageCircle className="w-6 h-6 md:w-8 md:h-8 fill-current" />
       </Link>
 
       {sections.map((section, idx) => (
-        <div key={idx} className={`py-24 ${idx % 2 !== 0 ? 'bg-primary/5' : 'bg-white'} overflow-hidden relative`}>
+        <div key={idx} className={`py-16 md:py-24 ${idx % 2 !== 0 ? 'bg-primary/5' : 'bg-white'} overflow-hidden relative`}>
           <div className="container mx-auto px-6">
-            <div className={`flex flex-col lg:flex-row items-center gap-16 ${section.reversed ? 'lg:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col lg:flex-row items-center gap-10 md:gap-16 ${section.reversed ? 'lg:flex-row-reverse' : ''}`}>
               <div className="lg:w-1/2">
-                <span className="text-secondary text-2xl font-light tracking-[0.2em] block mb-2 uppercase">
+                <span className="text-secondary text-lg md:text-2xl font-light tracking-[0.2em] block mb-2 md:mb-4 uppercase">
                   {section.subtitle}
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 md:mb-8 leading-tight">
                   {section.title}
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-justify">
+                <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-8 leading-relaxed text-justify">
                   {section.text}
                 </p>
               </div>
               
-              <div className="lg:w-1/2 relative">
-                <div className="relative z-10 rounded-none overflow-hidden shadow-xl aspect-[4/3]">
+              <div className="lg:w-1/2 w-full relative">
+                <div className="relative z-10 rounded-none overflow-hidden shadow-xl aspect-[4/3] w-full">
                   <Image 
                     src={section.image} 
                     alt={section.title} 
@@ -74,7 +75,7 @@ export function About() {
                     data-ai-hint={section.hint}
                   />
                 </div>
-                <div className={`absolute -bottom-10 ${section.reversed ? '-left-10' : '-right-10'} w-64 h-64 bg-secondary rounded-full -z-0 opacity-10 blur-3xl`} />
+                <div className={`absolute -bottom-10 ${section.reversed ? '-left-10' : '-right-10'} w-48 md:w-64 h-48 md:h-64 bg-secondary rounded-full -z-0 opacity-10 blur-3xl`} />
               </div>
             </div>
           </div>
@@ -94,35 +95,35 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-us" className="py-24 bg-primary text-white relative">
+    <section id="why-us" className="py-16 md:py-24 bg-primary text-white relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 md:gap-16 items-center">
           <div className="lg:w-1/2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight">Why Choose Us?</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 uppercase tracking-tight">Why Choose Us?</h2>
+            <div className="space-y-4 md:space-y-6">
               {points.map((point, i) => (
-                <div key={i} className="flex items-center gap-4 group">
-                  <CheckCircle2 className="text-secondary w-6 h-6 group-hover:scale-110 transition-transform" />
-                  <p className="text-lg text-white/80">{point}</p>
+                <div key={i} className="flex items-start gap-4 group">
+                  <CheckCircle2 className="text-secondary w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform shrink-0 mt-1" />
+                  <p className="text-base md:text-lg text-white/80">{point}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="lg:w-1/2 grid grid-cols-2 gap-6">
-            <div className="bg-white/5 p-10 rounded-none border border-white/10 hover:bg-white/10 transition-colors">
-              <h4 className="text-secondary text-5xl font-bold mb-4">24/7</h4>
-              <p className="text-white/60">Export Logistics Support</p>
+          <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="bg-white/5 p-8 md:p-10 rounded-none border border-white/10 hover:bg-white/10 transition-colors text-center md:text-left">
+              <h4 className="text-secondary text-4xl md:text-5xl font-bold mb-2 md:mb-4">24/7</h4>
+              <p className="text-white/60 text-sm md:text-base">Export Logistics Support</p>
             </div>
-            <div className="bg-white/5 p-10 rounded-none border border-white/10 hover:bg-white/10 transition-colors">
-              <h4 className="text-secondary text-5xl font-bold mb-4">100%</h4>
-              <p className="text-white/60">Natural Ingredients</p>
+            <div className="bg-white/5 p-8 md:p-10 rounded-none border border-white/10 hover:bg-white/10 transition-colors text-center md:text-left">
+              <h4 className="text-secondary text-4xl md:text-5xl font-bold mb-2 md:mb-4">100%</h4>
+              <p className="text-white/60 text-sm md:text-base">Natural Ingredients</p>
             </div>
-            <div className="col-span-2 bg-secondary p-10 rounded-none text-primary flex items-center justify-between">
+            <div className="sm:col-span-2 bg-secondary p-8 md:p-10 rounded-none text-primary flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-4 md:gap-0">
               <div>
-                <h4 className="text-3xl font-bold mb-2">Global Network</h4>
-                <p className="text-primary/70">Connecting 25+ Countries</p>
+                <h4 className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">Global Network</h4>
+                <p className="text-primary/70 text-sm md:text-base">Connecting 25+ Countries</p>
               </div>
-              <Globe className="w-16 h-16 opacity-20" />
+              <Globe className="w-12 h-12 md:w-16 md:h-16 opacity-20" />
             </div>
           </div>
         </div>
