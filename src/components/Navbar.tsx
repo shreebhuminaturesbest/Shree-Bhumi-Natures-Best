@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,13 +27,17 @@ export function Navbar() {
     { name: "CONTACT US", href: "#contact" },
   ];
 
-  const Logo = ({ isDark = false }: { isDark?: boolean }) => (
-    <div className="flex flex-col items-start leading-none pl-3 border-l-4 border-secondary">
-      <div className="flex items-baseline gap-1.5">
-        <span className={cn("font-black text-xl md:text-2xl tracking-tighter uppercase", isDark ? "text-primary" : "text-white")}>SHREE BHUMI</span>
-        <span className={cn("font-bold text-[10px] md:text-xs opacity-80 uppercase tracking-widest", isDark ? "text-primary" : "text-white")}>PVT LTD</span>
-      </div>
-      <span className="text-secondary font-bold text-[10px] md:text-xs tracking-[0.2em] mt-0.5 uppercase">NATURE&apos;S BEST</span>
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
+
+  const Logo = () => (
+    <div className="relative h-12 w-40 md:h-16 md:w-56">
+      <Image 
+        src={logoUrl} 
+        alt="Shree Bhumi Natures Best Logo" 
+        fill 
+        className="object-contain object-left"
+        priority
+      />
     </div>
   );
 
@@ -66,7 +71,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Main Logo Nav Bar - Updated to White Background */}
+      {/* Main Logo Nav Bar - White Background */}
       <header
         className={cn(
           "fixed left-0 right-0 z-50 transition-all duration-300 border-b border-border/10",
@@ -77,7 +82,7 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link href="/" className="flex items-center justify-center">
-            <Logo isDark={true} />
+            <Logo />
           </Link>
 
           {/* Desktop Nav - Dark Text for White Background */}
@@ -93,7 +98,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Mobile Menu Toggle - Dark Icon for White Background */}
+          {/* Mobile Menu Toggle - Dark Icon */}
           <button
             className="lg:hidden text-primary p-2"
             onClick={() => setIsOpen(true)}
@@ -112,7 +117,7 @@ export function Navbar() {
       >
         <div className="container mx-auto px-6 py-5 flex items-center justify-between border-b border-white/10">
           <Link href="/" onClick={() => setIsOpen(false)}>
-            <Logo isDark={false} />
+            <Logo />
           </Link>
           <button
             className="text-white p-2"

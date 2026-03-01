@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -7,14 +8,17 @@ import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const bgImageUrl = "https://i.ibb.co/v667tdY6/image.png";
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
 
   const Logo = () => (
-    <div className="flex flex-col items-start leading-none pl-3 border-l-4 border-secondary">
-      <div className="flex items-baseline gap-1.5">
-        <span className="text-white font-black text-xl md:text-2xl tracking-tighter uppercase">SHREE BHUMI</span>
-        <span className="text-white font-bold text-[10px] md:text-xs opacity-80 uppercase tracking-widest">PVT LTD</span>
-      </div>
-      <span className="text-secondary font-bold text-[10px] md:text-xs tracking-[0.2em] mt-0.5 uppercase">NATURE&apos;S BEST</span>
+    <div className="relative h-12 w-48 md:h-16 md:w-64 bg-white/95 p-1">
+      <Image 
+        src={logoUrl} 
+        alt="Shree Bhumi Natures Best Logo" 
+        fill 
+        className="object-contain object-left"
+        sizes="(max-width: 768px) 192px, 256px"
+      />
     </div>
   );
 
