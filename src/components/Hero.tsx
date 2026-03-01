@@ -3,112 +3,148 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { cn } from "@/lib/utils";
 
 const slides = [
   {
+    image: PlaceHolderImages.find(i => i.id === 'hero-export-plane')?.imageUrl || "",
+    welcome: "WELCOME TO",
+    title: "SBNB Global Foods Ltd.",
+    hint: "cargo plane"
+  },
+  {
+    image: PlaceHolderImages.find(i => i.id === 'hero-export-ship')?.imageUrl || "",
+    welcome: "TRUSTED PARTNER",
+    title: "Global Supply Chain Excellence",
+    hint: "cargo ship"
+  },
+  {
     image: PlaceHolderImages.find(i => i.id === 'hero-spices')?.imageUrl || "",
-    title: "Pure Authentic Indian Spices",
-    subtitle: "From farm to world, delivering the essence of premium quality.",
-    cta: "Explore Spices",
+    welcome: "AUTHENTIC QUALITY",
+    title: "Premium Indian Spices Export",
     hint: "indian spices"
-  },
-  {
-    image: PlaceHolderImages.find(i => i.id === 'hero-vegetables')?.imageUrl || "",
-    title: "Fresh Global Food Exports",
-    subtitle: "Consistently delivering fresh, high-quality produce worldwide.",
-    cta: "View Products",
-    hint: "fresh vegetables"
-  },
-  {
-    image: PlaceHolderImages.find(i => i.id === 'hero-factory')?.imageUrl || "",
-    title: "Quality You Can Trust",
-    subtitle: "Adhering to international safety standards in every pack.",
-    cta: "Our Process",
-    hint: "food factory"
   }
 ];
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
+      nextSlide();
+    }, 7000);
     return () => clearInterval(timer);
-  }, []);
+  }, [current]);
 
-  const next = () => setCurrent((prev) => (prev + 1) % slides.length);
-  const prev = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const nextSlide = () => {
+    if (animating) return;
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+      setAnimating(false);
+    }, 500);
+  };
+
+  const prevSlide = () => {
+    if (animating) return;
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+      setAnimating(false);
+    }, 500);
+  };
 
   return (
-    <section id="home" className="relative h-[90vh] md:h-screen w-full overflow-hidden bg-primary">
+    <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === current ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
-          }`}
+          className={cn(
+            "absolute inset-0 transition-all duration-1000",
+            index === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+          )}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+          {/* Grizzle/Grid Reveal Effect */}
+          <div className="absolute inset-0 grid grid-cols-10 grid-rows-10 z-20 pointer-events-none">
+            {index === current && Array.from({ length: 100 }).map((_, i) => (
+              <div 
+                key={i} 
+                className="bg-black/10 animate-grid-reveal"
+                style={{ 
+                  animationDelay: `${Math.random() * 0.5}s`,
+                  opacity: 0
+                }}
+              />
+            ))}
+          </div>
+
           <Image
             src={slide.image}
             alt={slide.title}
             fill
-            className="object-cover transition-transform duration-[6000ms] ease-linear scale-105 group-hover:scale-100"
+            className="object-cover"
             priority={index === 0}
             data-ai-hint={slide.hint}
           />
-          <div className="relative z-20 h-full container mx-auto px-6 flex flex-col justify-center items-start text-white">
-            <span className="text-secondary font-semibold tracking-widest uppercase mb-4 animate-fade-in-up">
-              Welcome to SBNB Global Foods
-            </span>
-            <h1 className="text-4xl md:text-7xl font-bold max-w-3xl mb-6 leading-tight animate-fade-in-up delay-75">
+          
+          <div className="absolute inset-0 bg-black/40 z-10" />
+
+          {/* Centered Content */}
+          <div className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6">
+            <div className="mb-4 flex flex-col items-center animate-text-reveal">
+              <span className="text-white text-lg md:text-xl font-medium tracking-[0.2em] relative inline-block">
+                {slide.welcome}
+                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-white opacity-60"></span>
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-8xl font-bold text-white mb-10 max-w-5xl leading-tight animate-text-reveal [animation-delay:0.2s]">
               {slide.title}
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-xl mb-10 animate-fade-in-up delay-150">
-              {slide.subtitle}
-            </p>
-            <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
-              <Button size="lg" className="bg-secondary text-primary hover:bg-white hover:text-primary border-none">
-                {slide.cta} <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Contact Us
+
+            <div className="animate-text-reveal [animation-delay:0.4s]">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full border-2 border-white text-white bg-transparent hover:bg-secondary hover:border-secondary hover:text-white px-10 h-14 text-lg transition-all"
+                asChild
+              >
+                <Link href="#contact">Contact Us</Link>
               </Button>
             </div>
           </div>
         </div>
       ))}
 
-      {/* Navigation */}
-      <div className="absolute bottom-10 right-10 z-30 flex gap-4">
-        <button
-          onClick={prev}
-          className="p-3 rounded-full border border-white/30 text-white hover:bg-secondary hover:text-primary transition-all"
-        >
-          <ChevronLeft />
-        </button>
-        <button
-          onClick={next}
-          className="p-3 rounded-full border border-white/30 text-white hover:bg-secondary hover:text-primary transition-all"
-        >
-          <ChevronRight />
-        </button>
-      </div>
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-40 p-3 text-white/50 hover:text-white transition-colors"
+      >
+        <ChevronLeft size={48} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-40 p-3 text-white/50 hover:text-white transition-colors"
+      >
+        <ChevronRight size={48} />
+      </button>
 
       {/* Progress indicators */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex gap-4">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1.5 transition-all duration-300 rounded-full ${
-              i === current ? "w-12 bg-secondary" : "w-3 bg-white/40"
-            }`}
+            className={cn(
+              "h-1.5 transition-all duration-300 rounded-full",
+              i === current ? "w-10 bg-secondary" : "w-3 bg-white/30"
+            )}
           />
         ))}
       </div>

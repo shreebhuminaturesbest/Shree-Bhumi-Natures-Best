@@ -1,6 +1,18 @@
 {
   "placeholderImages": [
     {
+      "id": "hero-export-ship",
+      "description": "Large cargo ship at sea",
+      "imageUrl": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXJnbyUyMHNoaXB8ZW58MHx8fHwxNzc2MzM2MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cargo ship"
+    },
+    {
+      "id": "hero-export-plane",
+      "description": "Cargo plane taking off",
+      "imageUrl": "https://images.unsplash.com/photo-1559135197-8a45ea74d367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXJnbyUyMHBsYW5lfGVufDB8fHx8MTc3NjMzNjExMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cargo plane"
+    },
+    {
       "id": "hero-spices",
       "description": "Rich assortment of Indian spices",
       "imageUrl": "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzcyMzQ3MDgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
