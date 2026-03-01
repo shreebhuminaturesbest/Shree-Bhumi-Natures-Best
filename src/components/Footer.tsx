@@ -10,7 +10,7 @@ export function Footer() {
 
   const Logo = () => (
     <div className="flex flex-col items-start leading-none pl-3 border-l-4 border-secondary">
-      <span className="text-primary font-black text-xl md:text-2xl tracking-tighter">SHREE BHUMI</span>
+      <span className="text-white font-black text-xl md:text-2xl tracking-tighter">SHREE BHUMI</span>
       <span className="text-secondary font-bold text-[10px] md:text-xs tracking-[0.2em] mt-0.5">NATURE&apos;S BEST</span>
     </div>
   );
@@ -33,7 +33,7 @@ export function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <Link href="/" className="bg-white/95 p-4 flex items-center justify-center inline-block">
+            <Link href="/" className="inline-block">
               <Logo />
             </Link>
             <p className="text-white/80 leading-relaxed text-sm">

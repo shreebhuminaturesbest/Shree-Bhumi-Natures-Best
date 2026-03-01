@@ -27,7 +27,7 @@ export function Navbar() {
 
   const Logo = () => (
     <div className="flex flex-col items-start leading-none pl-3 border-l-4 border-secondary">
-      <span className="text-primary font-black text-xl md:text-2xl tracking-tighter">SHREE BHUMI</span>
+      <span className="text-white font-black text-xl md:text-2xl tracking-tighter">SHREE BHUMI</span>
       <span className="text-secondary font-bold text-[10px] md:text-xs tracking-[0.2em] mt-0.5">NATURE&apos;S BEST</span>
     </div>
   );
@@ -71,7 +71,7 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="bg-white/95 px-4 py-2 flex items-center justify-center min-w-[200px]">
+          <Link href="/" className="flex items-center justify-center">
             <Logo />
           </Link>
 
@@ -106,9 +106,9 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-6 py-5 flex items-center justify-between border-b border-white/10">
-          <div className="bg-white/95 px-4 py-2 flex items-center justify-center">
+          <Link href="/" onClick={() => setIsOpen(false)}>
             <Logo />
-          </div>
+          </Link>
           <button
             className="text-white p-2"
             onClick={() => setIsOpen(false)}
