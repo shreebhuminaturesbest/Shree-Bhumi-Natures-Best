@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -81,7 +80,7 @@ export function Footer() {
             <ul className="space-y-6">
               <li className="flex gap-4 items-start">
                 <MapPin className="text-secondary shrink-0 mt-1" />
-                <span className="text-white/80 text-sm leading-relaxed font-bold">Global Headquarters, Gujarat, India</span>
+                <span className="text-white/80 text-sm leading-relaxed font-bold">48/48 papaiah Yadav Nagar colony chintal Hyderabad Telangana 500055</span>
               </li>
               <li className="flex gap-4 items-center">
                 <Phone className="text-secondary shrink-0" />

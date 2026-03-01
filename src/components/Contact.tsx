@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -44,7 +43,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-white/40 text-sm">Email Us</p>
-                    <p className="text-lg font-medium">export@sbnbglobal.com</p>
+                    <p className="text-lg font-medium">info@sbnbglobal.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -53,7 +52,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-white/40 text-sm">Call Us</p>
-                    <p className="text-lg font-medium">+91 98765 43210</p>
+                    <p className="text-lg font-medium">+91 9106758216</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
@@ -62,7 +61,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-white/40 text-sm">Global Headquarters</p>
-                    <p className="text-lg font-medium">42 Export Plaza, Mumbai, India</p>
+                    <p className="text-lg font-medium">48/48 papaiah Yadav Nagar colony chintal Hyderabad Telangana 500055</p>
                   </div>
                 </div>
               </div>
