@@ -10,7 +10,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp_Image_2026-03-01_at_10.37.55_AM-removebg-preview.png?alt=media&token=50f1f021-598f-4b00-ac36-db16ebb06120";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +67,7 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="relative h-12 w-40 md:h-14 md:w-48">
+          <Link href="/" className="relative h-12 w-40 md:h-14 md:w-56">
             <Image
               src={logoUrl}
               alt="Shree Bhumi Natures Best Pvt Ltd"

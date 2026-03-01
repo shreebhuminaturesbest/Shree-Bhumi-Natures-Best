@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const bgImageUrl = "https://i.ibb.co/v667tdY6/image.png";
-  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
+  const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp_Image_2026-03-01_at_10.37.55_AM-removebg-preview.png?alt=media&token=50f1f021-598f-4b00-ac36-db16ebb06120";
 
   return (
     <footer className="relative text-white pt-20 pb-10 overflow-hidden">
@@ -27,7 +27,7 @@ export function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <Link href="/" className="relative h-16 w-full max-w-[200px] block">
+            <Link href="/" className="relative h-20 w-full max-w-[240px] block">
               <Image
                 src={logoUrl}
                 alt="Shree Bhumi Logo"
