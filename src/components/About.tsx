@@ -8,7 +8,7 @@ import Link from "next/link";
 export function About() {
   const agriExportsImageUrl = "https://images.unsplash.com/photo-1771860108097-9e4214acfd37?q=80&w=1080";
   const exportMapUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1080";
-  const spicesImageUrl = "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzcyMzQ3MDgwfDA&ixlib=rb-4.1.0&q=80&w=1080";
+  const spicesImageUrl = "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzc2MzM2MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080";
   
   const sections = [
     {
@@ -94,14 +94,10 @@ export function About() {
 
 export function Certifications() {
   const logos = [
-    { name: "GMP", url: "https://www.vhcaherbals.com/wp-content/uploads/2018/06/gmp-logo.png" },
+    { name: "Directorate General of Foreign Trade", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/dgft.png" },
+    { name: "GST", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/gst.png" },
     { name: "APEDA", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/apeda.png" },
-    { name: "HALAL", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/halal.png" },
-    { name: "Spices Board", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/spice_board.png" },
-    { name: "IAF", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/iaf.png" },
-    { name: "FDA", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/fda.png" },
-    { name: "FSSAI", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/fssai.png" },
-    { name: "MSME", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/msme.png" }
+    { name: "Ministry of Commerce and Industry", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/spice_board.png" }
   ];
 
   return (
@@ -112,15 +108,15 @@ export function Certifications() {
             OUR <span className="text-secondary">CERTIFICATES</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
           {logos.map((logo, i) => (
-            <div key={i} className="relative w-24 h-24 grayscale hover:grayscale-0 transition-all duration-300">
+            <div key={i} className="relative w-40 h-40 grayscale hover:grayscale-0 transition-all duration-300">
               <Image 
                 src={logo.url} 
                 alt={logo.name} 
                 fill 
                 className="object-contain"
-                sizes="100px"
+                sizes="160px"
               />
             </div>
           ))}
