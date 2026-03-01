@@ -1,8 +1,7 @@
-
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, Globe, MessageCircle } from "lucide-react";
+import { CheckCircle2, Globe } from "lucide-react";
 import Link from "next/link";
 
 export function About() {
@@ -101,22 +100,23 @@ export function Certifications() {
   ];
 
   return (
-    <section className="py-16 bg-white border-t border-border">
+    <section className="py-16 bg-white border-t border-b border-border">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold tracking-widest text-primary uppercase">
             OUR <span className="text-secondary">CERTIFICATES</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
           {logos.map((logo, i) => (
-            <div key={i} className="relative w-40 h-40 grayscale hover:grayscale-0 transition-all duration-300">
+            <div key={i} className="relative w-40 h-40 transition-all duration-300">
               <Image 
                 src={logo.url} 
                 alt={logo.name} 
                 fill 
                 className="object-contain"
                 sizes="160px"
+                priority
               />
             </div>
           ))}
