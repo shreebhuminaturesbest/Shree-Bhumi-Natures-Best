@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -38,14 +39,14 @@ export function Hero() {
       handleNextSlide();
     }, 8000);
     return () => clearInterval(timer);
-  }, [animating]);
+  }, [animating, current]);
 
   const handleNextSlide = useCallback(() => {
     if (animating) return;
     setAnimating(true);
     setPrev(current);
     setCurrent((prevIdx) => (prevIdx + 1) % slides.length);
-    setTimeout(() => setAnimating(false), 1000);
+    setTimeout(() => setAnimating(false), 1200);
   }, [animating, current]);
 
   const handlePrevSlide = useCallback(() => {
@@ -53,54 +54,48 @@ export function Hero() {
     setAnimating(true);
     setPrev(current);
     setCurrent((prevIdx) => (prevIdx === 0 ? slides.length - 1 : prevIdx - 1));
-    setTimeout(() => setAnimating(false), 1000);
+    setTimeout(() => setAnimating(false), 1200);
   }, [animating, current]);
 
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Layers */}
+      {/* Background Slides */}
       <div className="absolute inset-0">
-        {/* Previous Slide (stays visible during transition) */}
+        {/* Underlayer (Previous or Next Slide) */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={slides[prev].image}
-            alt="Previous Slide"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        {/* Current Slide */}
-        <div
-          key={current}
-          className={cn(
-            "absolute inset-0 transition-opacity duration-500 z-10",
-            animating ? "opacity-0" : "opacity-100"
-          )}
-        >
-          <Image
             src={slides[current].image}
-            alt={slides[current].title}
+            alt="Current Background"
             fill
             className="object-cover animate-ken-burns"
             priority
             data-ai-hint={slides[current].hint}
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Transitioning Overlay (The Previous Slide sliding out) */}
+        <div className={cn("absolute inset-0 z-10", animating ? "opacity-100" : "opacity-0")}>
+           <Image
+            src={slides[prev].image}
+            alt="Previous Slide Overlay"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
       </div>
 
-      {/* Vertical Shutter Transition Overlay */}
+      {/* Modern Shutter Transition panels */}
       {animating && (
         <div className="absolute inset-0 z-20 flex pointer-events-none">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(10)].map((_, i) => (
             <div
               key={i}
               className="flex-1 bg-primary animate-shutter"
               style={{
-                animationDelay: `${i * 0.05}s`
+                animationDelay: `${i * 0.04}s`,
+                animationDuration: '0.9s'
               }}
             />
           ))}
@@ -157,7 +152,7 @@ export function Hero() {
               setPrev(current);
               setCurrent(i);
               setAnimating(true);
-              setTimeout(() => setAnimating(false), 1000);
+              setTimeout(() => setAnimating(false), 1200);
             }}
             className={cn(
               "h-1.5 transition-all duration-300 rounded-none",
