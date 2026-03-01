@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export function About() {
   const spicesImageUrl = "https://jbrotherexports.com/wp-content/uploads/2023/02/spices.jpg";
+  const exportMapUrl = "https://jbrotherexports.com/wp-content/uploads/2023/02/map-export.jpg";
   
   const sections = [
     {
@@ -20,8 +21,8 @@ export function About() {
       subtitle: "OUR MISSION",
       title: "DELIVERING PURITY GLOBALLY",
       text: "Our core mission is to bridge the gap between authentic Indian farms and global kitchens. We ensure that every product, from our ground spices to our whole vegetables, meets the highest international food safety standards. We believe in sustainable growth that benefits both the farmers who grow our products and the consumers who trust our quality across 25+ countries.",
-      image: spicesImageUrl,
-      hint: "spices collection",
+      image: exportMapUrl,
+      hint: "export map",
       reversed: true
     },
     {
