@@ -32,7 +32,7 @@ export function About() {
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl">
               <Image 
                 src={PlaceHolderImages.find(i => i.id === 'about-us')?.imageUrl || ""} 
-                alt="About SBNB" 
+                alt="About Shree Bhumi" 
                 width={800} 
                 height={600} 
                 className="object-cover"
@@ -43,7 +43,7 @@ export function About() {
             <div className="absolute top-10 -left-10 bg-white p-8 rounded-2xl shadow-xl z-20 hidden md:block border border-border">
               <div className="flex items-center gap-4 mb-2">
                 <Star className="text-secondary fill-secondary" />
-                <span className="font-bold text-primary text-xl">Top Exporter 2023</span>
+                <span className="font-bold text-primary text-xl">Top Exporter 2024</span>
               </div>
               <p className="text-sm text-muted-foreground">Recognized for Excellence in Spices</p>
             </div>
@@ -53,7 +53,7 @@ export function About() {
             <Badge variant="outline" className="text-secondary border-secondary mb-4">Our Story</Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">Pioneers of Authentic Indian Export</h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Founded with a passion for bringing the rich flavors of India to the global table, SBNB Global Foods has grown from a local supplier to a trusted international export partner. We bridge the gap between rural farmers and global kitchens.
+              Founded with a passion for bringing the rich flavors of India to the global table, Shree Bhumi Natures Best Pvt Ltd has grown from a local supplier to a trusted international export partner. We bridge the gap between rural farmers and global kitchens.
             </p>
             
             <div className="space-y-6">
@@ -90,7 +90,7 @@ export function WhyChooseUs() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Why SBNB Global?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Why Shree Bhumi (SBNB)?</h2>
             <div className="space-y-6">
               {points.map((point, i) => (
                 <div key={i} className="flex items-center gap-4 group">

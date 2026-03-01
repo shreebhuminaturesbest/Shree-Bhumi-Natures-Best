@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -16,10 +15,10 @@ export function Footer() {
               <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
                 <Leaf className="text-primary w-6 h-6" />
               </div>
-              <span className="text-2xl font-bold">SBNB <span className="text-secondary">Global</span></span>
+              <span className="text-2xl font-bold">SHREE BHUMI <span className="text-secondary">SBNB</span></span>
             </Link>
             <p className="text-white/60 leading-relaxed">
-              Global leaders in premium Indian food exports. Dedicated to quality, purity, and sustainable farming practices since 2012.
+              Global leaders in premium Indian food exports. Dedicated to quality, purity, and sustainable farming practices.
             </p>
           </div>
 
@@ -56,11 +55,11 @@ export function Footer() {
             <ul className="space-y-6">
               <li className="flex gap-4">
                 <MapPin className="text-secondary shrink-0" />
-                <span className="text-white/60">42 Export Plaza, Business Hub, Mumbai - 400001</span>
+                <span className="text-white/60">Global Headquarters, India</span>
               </li>
               <li className="flex gap-4">
                 <Phone className="text-secondary shrink-0" />
-                <span className="text-white/60">+91 98765 43210</span>
+                <span className="text-white/60">+91 9106758216</span>
               </li>
               <li className="flex gap-4">
                 <Mail className="text-secondary shrink-0" />
@@ -71,7 +70,7 @@ export function Footer() {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm">
-          <p>© {currentYear} SBNB Global Foods Private Limited. All Rights Reserved.</p>
+          <p>© {currentYear} Shree Bhumi Natures Best Pvt Ltd. All Rights Reserved.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

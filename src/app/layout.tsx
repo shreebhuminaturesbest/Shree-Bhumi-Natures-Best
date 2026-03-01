@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'J. Brother Spices & Agri Export | Premium Global Exports',
-  description: 'J. Brother Spices & Agri Export Pvt. Ltd. is a leading global exporter of authentic Indian spices, agriculture products, and premium food supplies.',
+  title: 'Shree Bhumi Natures Best Pvt Ltd | Premium Global Exports',
+  description: 'Shree Bhumi Natures Best Pvt Ltd (SBNB) is a leading global exporter of authentic Indian spices, agriculture products, and premium food supplies.',
 };
 
 export default function RootLayout({

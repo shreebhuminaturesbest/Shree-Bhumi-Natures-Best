@@ -1,10 +1,9 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
@@ -13,7 +12,7 @@ const slides = [
   {
     image: PlaceHolderImages.find(i => i.id === 'hero-export-plane')?.imageUrl || "",
     welcome: "WELCOME TO",
-    title: "SBNB Global Foods Ltd.",
+    title: "Shree Bhumi Natures Best Pvt Ltd",
     hint: "cargo plane"
   },
   {
@@ -69,7 +68,7 @@ export function Hero() {
             index === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
           )}
         >
-          {/* Grizzle/Grid Reveal Effect */}
+          {/* Grid Reveal Effect */}
           <div className="absolute inset-0 grid grid-cols-10 grid-rows-10 z-20 pointer-events-none">
             {index === current && Array.from({ length: 100 }).map((_, i) => (
               <div 

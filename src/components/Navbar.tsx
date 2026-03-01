@@ -49,7 +49,7 @@ export function Navbar() {
             <div className="w-px h-4 bg-white/20" />
             <div className="flex items-center gap-2 group cursor-pointer">
               <Mail className="w-4 h-4 text-secondary" />
-              <span className="group-hover:text-secondary transition-colors">info@jbrotherexports.com</span>
+              <span className="group-hover:text-secondary transition-colors">info@sbnbglobal.com</span>
             </div>
           </div>
         </div>
@@ -69,9 +69,9 @@ export function Navbar() {
               <Leaf className="text-secondary w-7 h-7" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-lg font-bold text-white tracking-tighter">J. BROTHER</span>
+              <span className="text-lg font-bold text-white tracking-tighter">SHREE BHUMI</span>
               <span className="text-[7px] text-white/70 font-bold uppercase mt-1 tracking-widest">
-                Spices & Agri Export Pvt. Ltd.
+                Natures Best Pvt. Ltd.
               </span>
             </div>
           </Link>
@@ -109,7 +109,7 @@ export function Navbar() {
         <div className="container mx-auto px-6 py-5 flex items-center justify-between border-b border-white/10">
           <div className="flex items-center gap-2">
             <Leaf className="text-secondary w-6 h-6" />
-            <span className="text-xl font-bold text-white">J. BROTHER</span>
+            <span className="text-xl font-bold text-white uppercase tracking-tighter">SHREE BHUMI</span>
           </div>
           <button
             className="text-white p-2"
