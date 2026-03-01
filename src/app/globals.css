@@ -46,12 +46,28 @@
     @apply px-8 py-4 border-2 border-[#2c2c2c] bg-[#1a1a1a] text-white text-lg cursor-pointer rounded-[30px] transition-all duration-500 outline-none relative overflow-hidden font-bold flex items-center justify-center;
   }
 
+  /* Glossy Shine Effect */
+  .boton-elegante::before {
+    content: "";
+    @apply absolute top-0 -left-full w-full h-full skew-x-[-25deg] transition-all duration-700 ease-in-out;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  }
+
+  .boton-elegante:hover::before {
+    @apply left-full;
+  }
+
   .boton-elegante::after {
     content: "";
     @apply absolute top-0 left-0 w-full h-full scale-0 transition-transform duration-500 rounded-full;
     background: radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.15) 0%,
       rgba(255, 255, 255, 0) 70%
     );
   }
@@ -61,7 +77,7 @@
   }
 
   .boton-elegante:hover {
-    @apply border-[#666666] bg-[#292929];
+    @apply border-[#666666] bg-[#292929] shadow-xl;
   }
 
   /* Shatter Reveal Animation */
@@ -128,7 +144,7 @@
 
   /* Custom Product Image Hover */
   .product-image-container:hover img {
-    transform: scale(1.1);
+    @apply scale-110;
   }
 
   @keyframes fade-in-up {

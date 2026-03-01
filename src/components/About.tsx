@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -6,7 +5,7 @@ import { CheckCircle2, Globe } from "lucide-react";
 import Link from "next/link";
 
 export function About() {
-  const agriExportsImageUrl = "https://images.unsplash.com/photo-1771860108097-9e4214acfd37?q=80&w=1080";
+  const agriExportsImageUrl = "https://ml0k8npvi8h7.i.optimole.com/cb:K2_q.4551d/w:1000/h:667/q:mauto/f:best/https://freshlineexim.com/wp-content/uploads/2023/02/5a874b9ace.jpg";
   const exportMapUrl = "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1080";
   const spicesImageUrl = "https://images.unsplash.com/photo-1606914469725-e398d2f1d7ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzc2MzM2MTEwfDA&ixlib=rb-4.1.0&q=80&w=1080";
   
@@ -16,7 +15,7 @@ export function About() {
       title: "SHREE BHUMI NATURES BEST PVT LTD",
       text: "In 2009, our group emerged onto the scene with a clear mission: to deliver top-notch products to consumers. Our journey began with a steadfast commitment to quality. As we steadily gained recognition for our dedication to excellence, we ventured into various sectors, including the premium spices and agricultural grains exports. Over time, our relentless pursuit of superior quality propelled us to the forefront of the market, establishing Shree Bhumi as a leading name in the realm of global food exports, not only within Gujarat but throughout India.",
       image: agriExportsImageUrl,
-      hint: "agri exports",
+      hint: "premium grains",
       reversed: false
     },
     {
@@ -60,7 +59,7 @@ export function About() {
           <div className="container mx-auto px-6">
             <div className={`flex flex-col lg:flex-row items-center gap-10 md:gap-16 ${section.reversed ? 'lg:flex-row-reverse' : ''}`}>
               <div className="lg:w-1/2">
-                <span className="text-secondary text-lg md:text-2xl font-light tracking-[0.2em] block mb-2 md:mb-4 uppercase">
+                <span className="text-white/70 text-lg md:text-2xl font-light tracking-[0.2em] block mb-2 md:mb-4 uppercase">
                   {section.subtitle}
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 md:mb-8 leading-tight">

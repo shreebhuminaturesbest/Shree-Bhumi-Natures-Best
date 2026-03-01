@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ml0k8npvi8h7.i.optimole.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

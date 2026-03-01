@@ -115,7 +115,7 @@ export function Hero() {
               href="#contact" 
               className="boton-elegante no-underline"
             >
-              Explore
+              Contact Us Now
             </Link>
           </div>
         </div>
