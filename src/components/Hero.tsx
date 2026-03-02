@@ -107,11 +107,8 @@ export function Hero() {
             {slides[current].title}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-4 animate-text-reveal [animation-delay:0.3s] w-full sm:w-auto">
-            <Link href="#products" className="boton-elegante no-underline">
-              Explore Products
-            </Link>
-            <Link href="#contact" className="boton-elegante bg-white !text-primary border-white no-underline">
+          <div className="flex justify-center animate-text-reveal [animation-delay:0.3s] w-full sm:w-auto">
+            <Link href="#contact" className="boton-elegante no-underline">
               Export Inquiry
             </Link>
           </div>
