@@ -15,8 +15,10 @@ import {
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -40,6 +42,12 @@ export function Navbar() {
   ];
 
   const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
+
+  if (!mounted) {
+    return (
+      <div className="fixed top-0 left-0 right-0 h-20 bg-white z-[100] border-b border-border/50" />
+    );
+  }
 
   return (
     <>

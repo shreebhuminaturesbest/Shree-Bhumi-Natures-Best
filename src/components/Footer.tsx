@@ -1,12 +1,22 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [mounted, setMounted] = useState(false);
+  const [currentYear, setCurrentYear] = useState(2025);
+
+  useEffect(() => {
+    setMounted(true);
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
+
+  if (!mounted) return null;
 
   return (
     <footer className="relative bg-primary text-white pt-24 pb-12 overflow-hidden">
