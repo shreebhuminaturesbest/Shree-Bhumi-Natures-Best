@@ -25,7 +25,7 @@ export function ExportExpress() {
             </h2>
             <p className="text-white/80 text-sm md:text-lg leading-relaxed mb-8 md:mb-10 max-w-xl font-medium">
               Driven by a passion for delivering premium quality produce, our mission 
-              is to consistently provide a wide array of organically cultivated grains 
+              is to consistently provide a wide array of naturally cultivated grains 
               and spices, ensuring authentic flavors and nourishment worldwide.
             </p>
             <div>

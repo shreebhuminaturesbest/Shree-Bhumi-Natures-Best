@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -78,9 +77,9 @@ const products = [
     name: "Millets",
     category: "Grains",
     image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=600",
-    description: "Nutritious and organic ancient grains for the health-conscious global market.",
+    description: "Nutritious and premium ancient grains for the health-conscious global market.",
     origin: "Maharashtra",
-    grade: "Organic Certified"
+    grade: "Premium Quality"
   },
 
   // Vegetables

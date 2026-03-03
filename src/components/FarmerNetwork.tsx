@@ -23,7 +23,7 @@ export function FarmerNetwork() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 { icon: Users, title: "10,000+ Farmers", desc: "Connected across Indian states" },
-                { icon: Sprout, title: "Organic Clusters", desc: "Chemical-free farming methods" },
+                { icon: Sprout, title: "Farm Clusters", desc: "Chemical-free farming methods" },
                 { icon: MapPin, title: "Diverse Regions", desc: "Grown in fertile soil hubs" },
                 { icon: Heart, title: "Fair Pricing", desc: "Supporting rural livelihoods" }
               ].map((item, i) => (
@@ -69,7 +69,7 @@ export function FarmerNetwork() {
             <div>
               <Users className="w-12 h-12 text-secondary mx-auto mb-6" />
               <h4 className="text-2xl font-bold mb-4 uppercase tracking-tighter">Training Support</h4>
-              <p className="text-white/60">Educating our partners on global organic and sustainable standards.</p>
+              <p className="text-white/60">Educating our partners on global quality and sustainable standards.</p>
             </div>
           </div>
         </div>

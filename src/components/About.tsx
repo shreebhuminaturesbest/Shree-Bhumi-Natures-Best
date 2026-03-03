@@ -65,11 +65,11 @@ export function About() {
             <div className="lg:w-1/2">
               <span className="text-secondary text-xl font-bold tracking-widest block mb-4 uppercase">Our Commitment</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight uppercase">Delivering Purity Globally</h2>
-              <p className="text-lg text-white/80 mb-8 leading-relaxed">We work directly with local farmer groups and organic clusters. By eliminating middlemen, we ensure fair income for our farmers and 100% traceable, fresh products for our global partners.</p>
+              <p className="text-lg text-white/80 mb-8 leading-relaxed">We work directly with local farmer groups and farm clusters. By eliminating middlemen, we ensure fair income for our farmers and 100% traceable, fresh products for our global partners.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { icon: Heart, text: "Fair Pricing" },
-                  { icon: Sprout, text: "Organic Clusters" },
+                  { icon: Sprout, text: "Farm Clusters" },
                   { icon: ShieldCheck, text: "No Middlemen" },
                   { icon: CheckCircle2, text: "Full Traceability" }
                 ].map((item, i) => (
@@ -97,7 +97,7 @@ export function About() {
               <span className="text-primary text-xl font-bold tracking-widest block mb-4 uppercase">Standard of Quality</span>
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">Excellence in Every Batch</h2>
               <ul className="space-y-4 mb-8">
-                {["Support farmers with fair pricing", "Promote sustainable organic farming", "Deliver premium quality produce", "Maintain global export standards"].map((item, i) => (
+                {["Support farmers with fair pricing", "Promote sustainable farming", "Deliver premium quality produce", "Maintain global export standards"].map((item, i) => (
                   <li key={i} className="flex items-start gap-4 text-muted-foreground">
                     <CheckCircle2 className="text-secondary w-5 h-5 shrink-0 mt-1" />
                     <span className="text-lg font-medium">{item}</span>
@@ -110,7 +110,7 @@ export function About() {
             </div>
             <div className="lg:w-1/2 w-full">
               <div className="relative aspect-[4/3] w-full">
-                <Image src={qualityImageUrl} alt="Excellence in Every Batch" fill className="object-cover" sizes="50vw" data-ai-hint="organic vegetables market" />
+                <Image src={qualityImageUrl} alt="Excellence in Every Batch" fill className="object-cover" sizes="50vw" data-ai-hint="vegetables market" />
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@ export function WhyChooseUs() {
     "Farmer-Based Sourcing for ultimate freshness.",
     "Premium Quality Control with FSSAI & ISO compliance.",
     "Global Export Standards for 25+ countries.",
-    "Sustainable & Organic Farming practices.",
+    "Sustainable & Natural Farming practices.",
     "Competitive Global Pricing with flexible terms."
   ];
 
