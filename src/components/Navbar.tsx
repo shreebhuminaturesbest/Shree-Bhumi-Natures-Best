@@ -25,20 +25,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleCategoryClick = (category: string) => {
-    // Dispatch a custom event to change the product tab
-    const event = new CustomEvent('changeProductTab', { detail: category });
-    window.dispatchEvent(event);
-    setIsOpen(false);
-  };
-
   const navLinks = [
-    { name: "HOME", href: "#home" },
-    { name: "ABOUT US", href: "#about" },
-    { name: "PRODUCTS", href: "#products", isDropdown: true },
-    { name: "FARMER NETWORK", href: "#farmer-network" },
-    { name: "EXPORT & QUALITY", href: "#why-us" },
-    { name: "CONTACT US", href: "#contact" },
+    { name: "HOME", href: "/#home" },
+    { name: "ABOUT US", href: "/#about" },
+    { name: "PRODUCTS", href: "/#products", isDropdown: true },
+    { name: "FARMER NETWORK", href: "/#farmer-network" },
+    { name: "EXPORT & QUALITY", href: "/#why-us" },
+    { name: "CONTACT US", href: "/#contact" },
   ];
 
   const logoUrl = "https://firebasestorage.googleapis.com/v0/b/studio-2215204146-270ef.firebasestorage.app/o/WhatsApp%20Image%202026-03-01%20at%2010.37.55%20AM.jpeg?alt=media&token=22012649-933c-4e4e-9775-dc1f1198cfe0";
@@ -86,17 +79,21 @@ export function Navbar() {
                     {link.name} <ChevronDown className="w-3 h-3" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-white border-primary/10 rounded-none min-w-[200px] p-2">
-                    {["Vegetables", "Grains", "Spices"].map((cat) => (
-                      <DropdownMenuItem key={cat} asChild>
-                        <Link 
-                          href="#products" 
-                          onClick={() => handleCategoryClick(cat)}
-                          className="text-xs font-bold text-primary hover:bg-primary/5 hover:text-secondary p-3 block cursor-pointer uppercase tracking-widest"
-                        >
-                          {cat}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
+                    <DropdownMenuItem asChild>
+                      <Link href="/vegetables" className="text-xs font-bold text-primary hover:bg-primary/5 hover:text-secondary p-3 block cursor-pointer uppercase tracking-widest">
+                        Vegetables
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/grains" className="text-xs font-bold text-primary hover:bg-primary/5 hover:text-secondary p-3 block cursor-pointer uppercase tracking-widest">
+                        Grains
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/spices" className="text-xs font-bold text-primary hover:bg-primary/5 hover:text-secondary p-3 block cursor-pointer uppercase tracking-widest">
+                        Spices
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
@@ -143,18 +140,6 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="flex flex-col items-center gap-4 pt-4">
-             {["Vegetables", "Grains", "Spices"].map((cat) => (
-              <Link 
-                key={cat}
-                href="#products" 
-                onClick={() => handleCategoryClick(cat)}
-                className="text-lg font-medium text-white/60 hover:text-secondary"
-              >
-                {cat}
-              </Link>
-            ))}
-          </div>
         </nav>
       </div>
     </>
