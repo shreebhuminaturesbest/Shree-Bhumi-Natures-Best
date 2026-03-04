@@ -127,7 +127,8 @@ export function Certifications() {
     { name: "Spices Board India", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/spices-board-india.png" },
     { name: "MSME", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/MSME.png" },
     { name: "Global Quality", url: "https://etimg.etb2bimg.com/photo/86677229.cms" },
-    { name: "DGFT", url: "https://content.dgft.gov.in/NCSTC/ncstc-sliderlogo/dgft-logo.jpg" }
+    { name: "DGFT", url: "https://content.dgft.gov.in/NCSTC/ncstc-sliderlogo/dgft-logo.jpg" },
+    { name: "ISO Certified", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvL40lg1W82c9jrAWVbR4UFZeQvOGZ3b0c3g&s" }
   ];
 
   return (
@@ -138,7 +139,7 @@ export function Certifications() {
             AUTHORITATIVE <span className="text-secondary">CERTIFICATIONS</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 md:gap-12 items-center justify-items-center">
           {logos.map((logo, i) => (
             <div key={i} className="relative w-24 h-24 md:w-32 md:h-32 transition-all duration-300">
               <Image src={logo.url} alt={logo.name} fill className="object-contain" sizes="(max-width: 768px) 96px, 128px" priority />
