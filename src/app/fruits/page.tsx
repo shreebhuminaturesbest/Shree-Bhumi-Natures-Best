@@ -19,7 +19,7 @@ const fruits = [
   },
   {
     name: "Bhagwa Pomegranate",
-    image: "https://images.unsplash.com/photo-1541344999736-83eca872f2fa?q=80&w=800",
+    image: "https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?q=80&w=800",
     description: "Deep red pearls with soft seeds and high juice content.",
     origin: "Maharashtra",
     grade: "Export Quality"
@@ -98,34 +98,34 @@ export default function FruitsPage() {
         </div>
       </section>
 
-      {/* Product Grid */}
-      <section className="py-24 bg-primary/5">
+      {/* Product Grid - Swipeable on Mobile */}
+      <section className="py-24 bg-primary/5 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:overflow-visible md:pb-0">
             {fruits.map((product, idx) => (
-              <div key={idx} className="bg-white rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group">
-                <div className="relative h-72 overflow-hidden">
+              <div key={idx} className="min-w-[48%] md:min-w-0 snap-center bg-white rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group shrink-0 md:shrink">
+                <div className="relative h-48 md:h-72 overflow-hidden">
                   <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute top-6 left-6">
-                    <Badge className="bg-secondary text-white rounded-full px-4 py-1 text-xs font-bold uppercase tracking-widest">Premium Export</Badge>
+                  <div className="absolute top-4 left-4 md:top-6 md:left-6">
+                    <Badge className="bg-secondary text-white rounded-full px-2 py-0.5 md:px-4 md:py-1 text-[8px] md:text-xs font-bold uppercase tracking-widest">Premium Export</Badge>
                   </div>
                 </div>
-                <div className="p-10">
-                  <h3 className="text-2xl font-bold text-primary mb-4 uppercase">{product.name}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{product.description}</p>
-                  <div className="space-y-2 mb-8 border-t border-primary/5 pt-6">
-                    <p className="text-sm font-bold text-secondary uppercase tracking-widest flex items-center gap-2">
-                      <ChevronRight className="w-4 h-4" /> Origin: {product.origin}
+                <div className="p-4 md:p-10">
+                  <h3 className="text-sm md:text-2xl font-bold text-primary mb-2 md:mb-4 uppercase line-clamp-1">{product.name}</h3>
+                  <p className="text-muted-foreground text-[10px] md:text-base mb-4 md:mb-6 leading-relaxed line-clamp-2">{product.description}</p>
+                  <div className="space-y-1 md:space-y-2 mb-4 md:mb-8 border-t border-primary/5 pt-3 md:pt-6">
+                    <p className="text-[8px] md:text-sm font-bold text-secondary uppercase tracking-widest flex items-center gap-1 md:gap-2">
+                      <ChevronRight className="w-3 h-3 md:w-4 md:h-4" /> Origin: {product.origin}
                     </p>
-                    <p className="text-sm font-bold text-primary/40 uppercase tracking-widest flex items-center gap-2">
-                      <ChevronRight className="w-4 h-4" /> Grade: {product.grade}
+                    <p className="text-[8px] md:text-sm font-bold text-primary/40 uppercase tracking-widest flex items-center gap-1 md:gap-2">
+                      <ChevronRight className="w-3 h-3 md:w-4 md:h-4" /> Grade: {product.grade}
                     </p>
                   </div>
                   <Button 
                     onClick={() => handleQuoteClick(product.name)}
-                    className="w-full h-14 bg-primary hover:bg-secondary rounded-full font-bold uppercase tracking-widest text-xs"
+                    className="w-full h-9 md:h-14 bg-primary hover:bg-secondary rounded-full font-bold uppercase tracking-widest text-[8px] md:text-xs"
                   >
-                    Get Quote via WhatsApp
+                    Get Quote
                   </Button>
                 </div>
               </div>

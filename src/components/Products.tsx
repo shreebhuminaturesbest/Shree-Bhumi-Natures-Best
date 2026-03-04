@@ -226,14 +226,6 @@ export function Products() {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState("Vegetables");
 
-  useEffect(() => {
-    const handleTabChange = (event: any) => {
-      setActiveTab(event.detail);
-    };
-    window.addEventListener('changeProductTab', handleTabChange);
-    return () => window.removeEventListener('changeProductTab', handleTabChange);
-  }, []);
-
   const filteredProducts = products.filter(p => p.category === activeTab);
 
   const handleQuoteSubmit = (e: React.FormEvent<HTMLFormElement>, productName: string) => {
@@ -261,7 +253,7 @@ export function Products() {
   };
 
   return (
-    <section id="products" className="py-24 bg-white">
+    <section id="products" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 rounded-none bg-secondary text-white">Our Product Categories</Badge>
@@ -287,28 +279,32 @@ export function Products() {
           </div>
 
           <TabsContent value={activeTab} className="mt-0 focus-visible:ring-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Horizontal Scroll on Mobile, Grid on Desktop */}
+            <div className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible lg:pb-0">
               {filteredProducts.map((product, idx) => (
-                <div key={idx} className="group bg-background rounded-none overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50">
-                  <div className="relative h-64 overflow-hidden">
+                <div 
+                  key={idx} 
+                  className="min-w-[48%] sm:min-w-[45%] lg:min-w-0 snap-center group bg-background rounded-none overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50 shrink-0 lg:shrink"
+                >
+                  <div className="relative h-48 md:h-64 overflow-hidden">
                     <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-secondary text-white rounded-none font-bold uppercase text-[10px] tracking-widest">{product.category}</Badge>
+                      <Badge className="bg-secondary text-white rounded-none font-bold uppercase text-[8px] md:text-[10px] tracking-widest">{product.category}</Badge>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-primary mb-2 uppercase tracking-tight">{product.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{product.description}</p>
-                    <div className="flex flex-col gap-1 mb-6">
-                       <p className="text-[10px] font-bold text-secondary uppercase tracking-widest">Origin: {product.origin}</p>
-                       <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Grade: {product.grade}</p>
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-sm md:text-xl font-bold text-primary mb-1 md:mb-2 uppercase tracking-tight line-clamp-1">{product.name}</h3>
+                    <p className="text-muted-foreground text-[10px] md:text-sm mb-2 md:mb-4 line-clamp-2">{product.description}</p>
+                    <div className="flex flex-col gap-1 mb-4 md:mb-6">
+                       <p className="text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest">Origin: {product.origin}</p>
+                       <p className="text-[8px] md:text-[10px] font-bold text-primary/40 uppercase tracking-widest">Grade: {product.grade}</p>
                     </div>
                     
                     <div className="flex gap-3">
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button className="flex-1 bg-primary hover:bg-primary/90 rounded-none h-11 font-bold uppercase tracking-widest text-[10px]">
-                            Export Inquiry
+                          <Button className="flex-1 bg-primary hover:bg-primary/90 rounded-none h-9 md:h-11 font-bold uppercase tracking-widest text-[8px] md:text-[10px]">
+                            Inquiry
                           </Button>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[500px] rounded-none">
