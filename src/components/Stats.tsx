@@ -6,15 +6,15 @@ import Image from 'next/image';
 const features = [
   { 
     title: "7+ Years Excellence", 
-    body: "Seven years of dedicated service in the global agricultural export industry." 
+    body: "Over seven years of dedicated service in the global agricultural export industry, bridging the gap between Indian fields and international markets." 
   },
   { 
     title: "25+ Global Clients", 
-    body: "Trusted by twenty-five premium importers across Europe, Asia, and the Middle East." 
+    body: "Trusted by twenty-five premium importers across Europe, Asia, and the Middle East, delivering consistent quality and reliable supply chains." 
   },
   { 
     title: "100+ Local Partners", 
-    body: "A strong network of over a hundred local Indian farm clusters and suppliers." 
+    body: "A robust network of over a hundred local Indian farm clusters and suppliers, ensuring direct-from-source purity and sustainable farming practices." 
   },
 ];
 
@@ -23,7 +23,11 @@ const keyImageUrl = "https://jbrotherexports.com/wp-content/themes/jbrotherexpor
 export function Stats() {
   return (
     <section className="py-16 md:py-24 bg-background border-b border-border">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 text-center">
+        <div className="mb-16">
+          <span className="text-secondary text-sm font-bold uppercase tracking-[0.3em] mb-4 block">Our Credentials</span>
+          <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Solid Foundation</h2>
+        </div>
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {features.map((item, i) => (
             <div 
