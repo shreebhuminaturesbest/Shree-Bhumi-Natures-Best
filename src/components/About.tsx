@@ -138,7 +138,7 @@ export function Certifications() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center">
           {logos.map((logo, i) => (
-            <div key={i} className="relative w-40 h-40 transition-all duration-300 grayscale hover:grayscale-0">
+            <div key={i} className="relative w-40 h-40 transition-all duration-300">
               <Image src={logo.url} alt={logo.name} fill className="object-contain" sizes="160px" priority />
             </div>
           ))}
@@ -150,11 +150,11 @@ export function Certifications() {
 
 export function WhyChooseUs() {
   const points = [
-    "Integrated Farm-to-Fork traceability and quality control.",
-    "B2B specialized logistics for 25+ global markets.",
-    "Certified laboratory testing for every product batch.",
-    "Elimination of middlemen to ensure fair and competitive pricing.",
-    "Sustainable procurement supporting local farm clusters."
+    "Integrated Farm-to-Fork traceability and quality control systems.",
+    "B2B specialized logistics network serving 25+ global markets.",
+    "Certified laboratory testing for every product batch for maximum purity.",
+    "Direct-from-source model to ensure fair and competitive pricing.",
+    "Sustainable procurement practices supporting over 100 local farm clusters."
   ];
 
   return (
