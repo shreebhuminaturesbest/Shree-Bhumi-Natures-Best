@@ -28,7 +28,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "HOME", href: "/#home" },
-    { name: "ABOUT US", href: "/#about" },
+    { name: "ABOUT US", href: "/about" },
     { name: "PRODUCTS", href: "/#products", isDropdown: true },
     { name: "EXPORT & QUALITY", href: "/#why-us" },
     { name: "CONTACT US", href: "/#contact" },
