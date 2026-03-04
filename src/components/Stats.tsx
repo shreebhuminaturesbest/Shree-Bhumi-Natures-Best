@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -6,15 +7,15 @@ import Image from 'next/image';
 const features = [
   { 
     title: "7+ Years Excellence", 
-    body: "Over seven years of dedicated service in the global agricultural export industry, bridging the gap between Indian fields and international markets." 
+    body: "Over seven years of dedicated service in the global agricultural export industry, bridging the gap between Indian fields and the world's most demanding markets." 
   },
   { 
     title: "25+ Global Clients", 
-    body: "Trusted by twenty-five premium importers across Europe, Asia, and the Middle East, delivering consistent quality and reliable supply chains." 
+    body: "Trusted by over twenty-five premium importers across Europe, Asia, and the Middle East, delivering consistent quality and fully traceable supply chains." 
   },
   { 
     title: "100+ Local Partners", 
-    body: "A robust network of over a hundred local Indian farm clusters and suppliers, ensuring direct-from-source purity and sustainable farming practices." 
+    body: "A robust network of over a hundred local Indian farm clusters, ensuring direct-from-source purity and sustainable farming practices for our global buyers." 
   },
 ];
 
@@ -26,7 +27,7 @@ export function Stats() {
       <div className="container mx-auto px-6 text-center">
         <div className="mb-16">
           <span className="text-secondary text-sm font-bold uppercase tracking-[0.3em] mb-4 block">Our Credentials</span>
-          <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Solid Foundation</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter">Solid Global Foundation</h2>
         </div>
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {features.map((item, i) => (
@@ -54,7 +55,7 @@ export function Stats() {
               </div>
               
               <button className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[125%] w-[75%] rounded-none border-none bg-secondary text-white text-[10px] md:text-xs font-black py-3 md:py-4 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-[-50%] group-hover:opacity-100 shadow-2xl tracking-widest uppercase">
-                Company Credentials
+                View Credentials
               </button>
             </div>
           ))}

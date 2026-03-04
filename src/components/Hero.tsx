@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -30,92 +30,74 @@ const slides = [
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
-  const [prev, setPrev] = useState(0);
-  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      handleNextSlide();
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 8000);
     return () => clearInterval(timer);
-  }, [animating, current]);
+  }, []);
 
-  const handleNextSlide = useCallback(() => {
-    if (animating) return;
-    setAnimating(true);
-    setPrev(current);
+  const handleNextSlide = () => {
     setCurrent((prevIdx) => (prevIdx + 1) % slides.length);
-    setTimeout(() => setAnimating(false), 1200);
-  }, [animating, current]);
+  };
 
-  const handlePrevSlide = useCallback(() => {
-    if (animating) return;
-    setAnimating(true);
-    setPrev(current);
+  const handlePrevSlide = () => {
     setCurrent((prevIdx) => (prevIdx === 0 ? slides.length - 1 : prevIdx - 1));
-    setTimeout(() => setAnimating(false), 1200);
-  }, [animating, current]);
+  };
 
   return (
     <section id="home" className="relative h-[85vh] md:h-screen w-full overflow-hidden bg-black">
+      {/* Background Slides with Classic Fade Transition */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={slides[current].image}
-            alt="Current Background"
-            fill
-            className="object-cover animate-ken-burns"
-            priority
-            data-ai-hint={slides[current].hint}
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
-        <div className={cn("absolute inset-0 z-10", animating ? "opacity-100" : "opacity-0")}>
-           <Image
-            src={slides[prev].image}
-            alt="Previous Slide Overlay"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-      </div>
-
-      {animating && (
-        <div className="absolute inset-0 z-20 grid grid-cols-5 md:grid-cols-10 grid-rows-5 md:grid-rows-10 pointer-events-none">
-          {[...Array(100)].map((_, i) => (
-            <div
-              key={i}
-              className="bg-primary animate-shutter"
-              style={{
-                animationDelay: `${Math.random() * 0.4}s`,
-                animationDuration: '0.8s',
-                animationName: 'shatter-reveal'
-              }}
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+              index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+            )}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className={cn(
+                "object-cover transition-transform duration-[10000ms]",
+                index === current ? "scale-110" : "scale-100"
+              )}
+              priority={index === 0}
+              data-ai-hint={slide.hint}
             />
-          ))}
-        </div>
-      )}
-
-      <div className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6">
-        <div key={`text-${current}`} className="flex flex-col items-center w-full max-w-6xl">
-          <span className="text-white/70 text-xs sm:text-sm md:text-xl font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase mb-4 md:mb-6 animate-text-reveal">
-            {slides[current].welcome}
-          </span>
-          
-          <h1 className="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 md:mb-12 leading-[1.2] md:leading-[1.05] uppercase animate-text-reveal [animation-delay:0.1s] drop-shadow-2xl px-4">
-            {slides[current].title}
-          </h1>
-
-          <div className="flex justify-center animate-text-reveal [animation-delay:0.3s] w-full sm:w-auto">
-            <Link href="#contact" className="boton-elegante no-underline py-3 px-8 text-sm md:text-base md:py-4 md:px-10">
-              Contact Us Now
-            </Link>
+            <div className="absolute inset-0 bg-black/50" />
           </div>
-        </div>
+        ))}
       </div>
 
+      {/* Content Overlay */}
+      <div className="relative z-30 h-full flex flex-col items-center justify-center text-center px-6">
+        {slides.map((slide, index) => (
+          index === current && (
+            <div key={`text-${index}`} className="flex flex-col items-center w-full max-w-6xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              <span className="text-white/70 text-xs sm:text-sm md:text-xl font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase mb-4 md:mb-6">
+                {slide.welcome}
+              </span>
+              
+              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 md:mb-12 leading-[1.2] md:leading-[1.05] uppercase drop-shadow-2xl px-4">
+                {slide.title}
+              </h1>
+
+              <div className="flex justify-center w-full sm:w-auto">
+                <Link href="#contact" className="boton-elegante no-underline py-3 px-8 text-sm md:text-base md:py-4 md:px-10">
+                  Contact Us Now
+                </Link>
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+
+      {/* Navigation Controls */}
       <button
         onClick={handlePrevSlide}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-40 p-3 text-white/30 hover:text-secondary transition-colors hidden sm:block"
@@ -131,17 +113,12 @@ export function Hero() {
         <ChevronRight size={64} strokeWidth={1} />
       </button>
 
+      {/* Progress Indicators */}
       <div className="absolute bottom-10 md:bottom-16 left-1/2 -translate-x-1/2 z-40 flex gap-4 md:gap-6">
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => {
-              if (animating || current === i) return;
-              setPrev(current);
-              setCurrent(i);
-              setAnimating(true);
-              setTimeout(() => setAnimating(false), 1200);
-            }}
+            onClick={() => setCurrent(i)}
             className={cn(
               "h-1 md:h-1.5 transition-all duration-300 rounded-none",
               i === current ? "w-8 md:w-24 bg-white" : "w-3 md:w-6 bg-white/20 hover:bg-white/50"
