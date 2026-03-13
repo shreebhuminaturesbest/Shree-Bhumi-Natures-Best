@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -22,204 +24,28 @@ const categories = ["Vegetables", "Grains", "Spices", "Fruits"];
 
 const products = [
   // Vegetables
-  {
-    name: "Fresh Tomatoes",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1546470427-227c736c2841?q=80&w=800",
-    description: "Premium sun-ripened tomatoes, hand-picked for global standards.",
-    origin: "Southern India",
-    grade: "Export Grade A"
-  },
-  {
-    name: "Red & Pink Onions",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=800",
-    description: "Firm onions with excellent pungency and shelf life.",
-    origin: "Nashik, Maharashtra",
-    grade: "Premium Export"
-  },
-  {
-    name: "White Garlic",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=800",
-    description: "Bold cloves with strong aroma and natural nourishment.",
-    origin: "Madhya Pradesh",
-    grade: "Superior"
-  },
-  {
-    name: "Natural Potatoes",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?q=80&w=800",
-    description: "Multi-purpose export quality potatoes with minimal moisture.",
-    origin: "Uttar Pradesh",
-    grade: "Grade A"
-  },
-  {
-    name: "Mixed Peppers",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1592924357228-91a4bcadcfea?q=80&w=800",
-    description: "Crisp and colorful peppers grown under natural sunlight.",
-    origin: "Karnataka",
-    grade: "Top Selection"
-  },
-  {
-    name: "Fresh Carrots",
-    category: "Vegetables",
-    image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=800",
-    description: "Sweet and crunchy carrots, cleaned and graded for export.",
-    origin: "Ooty, Tamil Nadu",
-    grade: "Premium"
-  },
+  { name: "Fresh Tomatoes", category: "Vegetables", image: "https://images.unsplash.com/photo-1546470427-227c736c2841?q=80&w=800", description: "Premium sun-ripened tomatoes.", origin: "Southern India", grade: "Export Grade A" },
+  { name: "Red Onions", category: "Vegetables", image: "https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=800", description: "Firm onions with excellent shelf life.", origin: "Maharashtra", grade: "Premium" },
+  { name: "White Garlic", category: "Vegetables", image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=800", description: "Bold cloves with strong aroma.", origin: "Madhya Pradesh", grade: "Superior" },
+  { name: "Fresh Potatoes", category: "Vegetables", image: "https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?q=80&w=800", description: "Multi-purpose export quality.", origin: "Uttar Pradesh", grade: "Grade A" },
 
   // Grains
-  {
-    name: "Aromatic Rice",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800",
-    description: "Premium aged rice varieties with exquisite aroma and length.",
-    origin: "North India",
-    grade: "Supreme"
-  },
-  {
-    name: "Premium Wheat",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=800",
-    description: "High-protein wheat grains sourced directly from farm clusters.",
-    origin: "Central India",
-    grade: "Sharbati"
-  },
-  {
-    name: "Golden Corn",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=800",
-    description: "Cleaned and dried yellow maize for food and feed industries.",
-    origin: "Andhra Pradesh",
-    grade: "Standard Export"
-  },
-  {
-    name: "Pearl Barley",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1601314112185-334be10878ca?q=80&w=800",
-    description: "Nutritious barley grains processed to preserve natural goodness.",
-    origin: "Rajasthan",
-    grade: "Export Ready"
-  },
-  {
-    name: "Finger Millets",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800",
-    description: "Traditional superfood grains for the health-conscious global market.",
-    origin: "Maharashtra",
-    grade: "Premium"
-  },
-  {
-    name: "Sorghum Grains",
-    category: "Grains",
-    image: "https://images.unsplash.com/photo-1605333396915-47ed6b68a00e?q=80&w=800",
-    description: "Naturally grown white and yellow sorghum, rich in minerals.",
-    origin: "Telangana",
-    grade: "High Quality"
-  },
+  { name: "Aromatic Rice", category: "Grains", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800", description: "Premium aged rice varieties.", origin: "North India", grade: "Supreme" },
+  { name: "Premium Wheat", category: "Grains", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=800", description: "High-protein wheat grains.", origin: "Central India", grade: "Sharbati" },
+  { name: "Golden Corn", category: "Grains", image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=800", description: "Cleaned and dried yellow maize.", origin: "Andhra Pradesh", grade: "Export" },
+  { name: "Finger Millets", category: "Grains", image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800", description: "Traditional superfood grains.", origin: "Maharashtra", grade: "Premium" },
 
   // Spices
-  {
-    name: "Black Pepper",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1532431110031-15b565780598?q=80&w=800",
-    description: "Bold and pungent black peppercorns from the Western Ghats.",
-    origin: "Kerala",
-    grade: "Bold 550GL"
-  },
-  {
-    name: "Turmeric Powder",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1698556735172-1b5b3cd9d2ce?q=80&w=800",
-    description: "High-curcumin turmeric, sun-dried and finely polished.",
-    origin: "Salem/Erode",
-    grade: "Export A-Grade"
-  },
-  {
-    name: "Cumin Seeds",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1530588625438-7c5504971c2a?q=80&w=800",
-    description: "Aromatic and machine-cleaned cumin seeds with high oil content.",
-    origin: "Gujarat",
-    grade: "Premium Eagle"
-  },
-  {
-    name: "Green Cardamom",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1599307734173-03027b872b53?q=80&w=800",
-    description: "Exquisite green cardamom pods with intense natural fragrance.",
-    origin: "Idukki, Kerala",
-    grade: "8mm+ Bold"
-  },
-  {
-    name: "Cinnamon Bark",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1614734892376-74e6f6630044?q=80&w=800",
-    description: "Pure and sweet cinnamon sticks, perfect for gourmet exports.",
-    origin: "Southern India",
-    grade: "Penta/Alba"
-  },
-  {
-    name: "Dried Red Chili",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=800",
-    description: "Fiery red chilies with natural color and heat levels.",
-    origin: "Guntur, Andhra Pradesh",
-    grade: "Premium Teja"
-  },
-  {
-    name: "Natural Cloves",
-    category: "Spices",
-    image: "https://images.unsplash.com/photo-1590401819777-628f8059868e?q=80&w=800",
-    description: "Hand-picked cloves, rich in eugenol and natural aroma.",
-    origin: "Southern India",
-    grade: "Hand Picked"
-  },
+  { name: "Black Pepper", category: "Spices", image: "https://images.unsplash.com/photo-1532431110031-15b565780598?q=80&w=800", description: "Bold and pungent peppercorns.", origin: "Kerala", grade: "Bold 550GL" },
+  { name: "Turmeric Powder", category: "Spices", image: "https://images.unsplash.com/photo-1698556735172-1b5b3cd9d2ce?q=80&w=800", description: "High-curcumin turmeric.", origin: "Salem", grade: "Export A" },
+  { name: "Cumin Seeds", category: "Spices", image: "https://images.unsplash.com/photo-1530588625438-7c5504971c2a?q=80&w=800", description: "Aromatic with high oil content.", origin: "Gujarat", grade: "Premium" },
+  { name: "Green Cardamom", category: "Spices", image: "https://images.unsplash.com/photo-1599307734173-03027b872b53?q=80&w=800", description: "Exquisite green cardamom pods.", origin: "Kerala", grade: "8mm+ Bold" },
 
   // Fruits
-  {
-    name: "Alphonso Mangoes",
-    category: "Fruits",
-    image: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=800",
-    description: "King of fruits. Rich, creamy, and tender textured mangoes.",
-    origin: "Maharashtra",
-    grade: "Grade A"
-  },
-  {
-    name: "Bhagwa Pomegranate",
-    category: "Fruits",
-    image: "https://images.unsplash.com/photo-1541344999736-83eca872f2fa?q=80&w=800",
-    description: "Deep red pearls with soft seeds and high juice content.",
-    origin: "Maharashtra",
-    grade: "Export Quality"
-  },
-  {
-    name: "Cavendish Banana",
-    category: "Fruits",
-    image: "https://images.unsplash.com/photo-1603833665858-e61d17a86224?q=80&w=800",
-    description: "Large, firm, and uniform bananas for international markets.",
-    origin: "Andhra Pradesh",
-    grade: "Premium"
-  },
-  {
-    name: "Thompson Grapes",
-    category: "Fruits",
-    image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=800",
-    description: "Sweet seedless green grapes with crisp texture.",
-    origin: "Nashik",
-    grade: "AAA Export"
-  },
-  {
-    name: "Fresh Pink Guava",
-    category: "Fruits",
-    image: "https://images.unsplash.com/photo-1536511132770-e5088929944b?q=80&w=800",
-    description: "Aromatic pink guavas, rich in Vitamin C and fiber.",
-    origin: "Southern India",
-    grade: "Select Quality"
-  }
+  { name: "Alphonso Mangoes", category: "Fruits", image: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=800", description: "King of fruits - rich and creamy.", origin: "Maharashtra", grade: "Grade A" },
+  { name: "Pomegranate", category: "Fruits", image: "https://images.unsplash.com/photo-1541344999736-83eca872f2fa?q=80&w=800", description: "Deep red pearls.", origin: "Maharashtra", grade: "Export" },
+  { name: "Cavendish Banana", category: "Fruits", image: "https://images.unsplash.com/photo-1603833665858-e61d17a86224?q=80&w=800", description: "Large and firm bananas.", origin: "Andhra Pradesh", grade: "Premium" },
+  { name: "Thompson Grapes", category: "Fruits", image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=800", description: "Sweet seedless grapes.", origin: "Nashik", grade: "AAA" },
 ];
 
 export function Products() {
@@ -234,43 +60,35 @@ export function Products() {
     const company = formData.get("company");
     const country = formData.get("country");
     const quantity = formData.get("quantity");
-    const packaging = formData.get("packaging");
 
     const whatsappMessage = encodeURIComponent(
-      `*Export Quote Request (SBNB Global)*\n\n` +
-      `*Product:* ${productName}\n` +
-      `*Company:* ${company}\n` +
-      `*Country:* ${country}\n` +
-      `*Est. Quantity:* ${quantity} MT\n` +
-      `*Packaging:* ${packaging}`
+      `*Quote Request: ${productName}*\nCompany: ${company}\nCountry: ${country}\nQuantity: ${quantity}`
     );
 
     window.open(`https://wa.me/919550696255?text=${whatsappMessage}`, "_blank");
-    toast({
-      title: "Opening WhatsApp...",
-      description: `Requesting quote for ${productName}.`,
-    });
+    toast({ title: "Opening WhatsApp..." });
   };
 
   return (
-    <section id="products" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 rounded-none bg-secondary text-white">Our Product Categories</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 uppercase">Nature's Best Produce</h2>
+    <section id="products" className="section-padding bg-white">
+      <div className="container-custom">
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">Our Products</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Direct from Indian farm clusters to global markets—pure, traceable, and premium quality agricultural exports.
+            Premium quality agricultural products sourced directly from Indian farms
           </p>
         </div>
 
+        {/* Category Tabs */}
         <Tabs value={activeTab} className="w-full" onValueChange={setActiveTab}>
-          <div className="flex justify-center mb-12">
-            <TabsList className="bg-muted p-1 rounded-none h-auto flex-wrap">
+          <div className="flex justify-center mb-8">
+            <TabsList className="bg-muted p-1 rounded-lg h-auto flex-wrap gap-1">
               {categories.map(cat => (
                 <TabsTrigger 
                   key={cat} 
                   value={cat} 
-                  className="rounded-none px-8 py-3 data-[state=active]:bg-primary data-[state=active]:text-white transition-all font-bold uppercase tracking-tight text-xs"
+                  className="px-6 py-2.5 data-[state=active]:bg-secondary data-[state=active]:text-white transition-all font-medium rounded-md"
                 >
                   {cat}
                 </TabsTrigger>
@@ -279,66 +97,65 @@ export function Products() {
           </div>
 
           <TabsContent value={activeTab} className="mt-0 focus-visible:ring-0">
-            {/* Horizontal Scroll on Mobile, Grid on Desktop */}
-            <div className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible lg:pb-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {filteredProducts.map((product, idx) => (
-                <div 
-                  key={idx} 
-                  className="min-w-[48%] sm:min-w-[45%] lg:min-w-0 snap-center group bg-background rounded-none overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-border/50 shrink-0 lg:shrink"
-                >
-                  <div className="relative h-48 md:h-64 overflow-hidden">
-                    <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-secondary text-white rounded-none font-bold uppercase text-[8px] md:text-[10px] tracking-widest">{product.category}</Badge>
+                <div key={idx} className="card-corporate group">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image 
+                      src={product.image} 
+                      alt={product.name} 
+                      fill 
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                    />
+                    <div className="absolute top-3 left-3">
+                      <Badge className="bg-secondary text-white text-xs">{product.category}</Badge>
                     </div>
                   </div>
-                  <div className="p-4 md:p-6">
-                    <h3 className="text-sm md:text-xl font-bold text-primary mb-1 md:mb-2 uppercase tracking-tight line-clamp-1">{product.name}</h3>
-                    <p className="text-muted-foreground text-[10px] md:text-sm mb-2 md:mb-4 line-clamp-2">{product.description}</p>
-                    <div className="flex flex-col gap-1 mb-4 md:mb-6">
-                       <p className="text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest">Origin: {product.origin}</p>
-                       <p className="text-[8px] md:text-[10px] font-bold text-primary/40 uppercase tracking-widest">Grade: {product.grade}</p>
+                  <div className="p-4">
+                    <h3 className="text-base font-bold text-primary mb-1">{product.name}</h3>
+                    <p className="text-muted-foreground text-sm mb-3 line-clamp-1">{product.description}</p>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                      <span>{product.origin}</span>
+                      <span className="font-medium">{product.grade}</span>
                     </div>
-                    
-                    <div className="flex gap-3">
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Button className="flex-1 bg-primary hover:bg-primary/90 rounded-none h-9 md:h-11 font-bold uppercase tracking-widest text-[8px] md:text-[10px]">
-                            Inquiry
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="sm:max-w-[500px] rounded-none">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl text-primary font-bold">Export Quote Inquiry</DialogTitle>
-                            <DialogDescription>
-                              Get current pricing and capacity for <span className="font-bold text-secondary">{product.name}</span>.
-                            </DialogDescription>
-                          </DialogHeader>
-                          <form 
-                            className="space-y-4 py-4" 
-                            onSubmit={(e) => handleQuoteSubmit(e, product.name)}
-                          >
-                            <div className="grid grid-cols-2 gap-4">
-                              <Input name="company" required className="rounded-none h-12" placeholder="Company Name" />
-                              <Input name="country" required className="rounded-none h-12" placeholder="Country" />
-                            </div>
-                            <Input name="quantity" required className="rounded-none h-12" placeholder="Est. Quantity (MT)" />
-                            <Textarea name="packaging" className="rounded-none" placeholder="Packaging requirements?" rows={4} />
-                            <DialogFooter>
-                              <Button type="submit" className="w-full bg-secondary text-white hover:bg-primary rounded-none h-14 font-bold uppercase tracking-widest">
-                                Submit Quote Request
-                              </Button>
-                            </DialogFooter>
-                          </form>
-                        </DialogContent>
-                      </Dialog>
-                    </div>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full bg-secondary hover:bg-secondary/90 text-sm h-9">
+                          Get Quote
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[450px]">
+                        <DialogHeader>
+                          <DialogTitle className="text-lg font-bold">Request Quote</DialogTitle>
+                          <DialogDescription>{product.name}</DialogDescription>
+                        </DialogHeader>
+                        <form className="space-y-3" onSubmit={(e) => handleQuoteSubmit(e, product.name)}>
+                          <div className="grid grid-cols-2 gap-3">
+                            <Input name="company" required placeholder="Company" className="h-10" />
+                            <Input name="country" required placeholder="Country" className="h-10" />
+                          </div>
+                          <Input name="quantity" required placeholder="Quantity (MT)" className="h-10" />
+                          <DialogFooter>
+                            <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90 h-10">
+                              Submit
+                            </Button>
+                          </DialogFooter>
+                        </form>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
               ))}
             </div>
           </TabsContent>
         </Tabs>
+
+        <div className="text-center mt-12">
+          <Link href="/#contact" className="btn-primary inline-flex items-center gap-2">
+            View All Products <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );

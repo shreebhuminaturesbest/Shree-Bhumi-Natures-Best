@@ -2,8 +2,9 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Shree Bhumi Natures Best Pvt Ltd | Premium Global Exports',
-  description: 'Shree Bhumi Natures Best Pvt Ltd (SBNB) is a leading global exporter of authentic Indian spices, agriculture products, and premium food supplies.',
+  title: 'Srinikia Exports | Premium Indian Agricultural Products Exporter',
+  description: 'Srinikia Exports - Leading global exporter of authentic Indian spices, fresh vegetables, premium grains, and fresh fruits. Delivering quality produce to worldwide markets.',
+  keywords: 'Indian exports, spices, vegetables, grains, fruits, agricultural products, international trade',
 };
 
 export default function RootLayout({
@@ -16,9 +17,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased selection:bg-secondary/30">
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

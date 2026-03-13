@@ -6,7 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const spices = [
@@ -67,7 +67,7 @@ export default function SpicesPage() {
   const handleQuoteClick = (productName: string) => {
     const whatsappMessage = encodeURIComponent(
       `*Spice Export Inquiry: ${productName}*\n\n` +
-      `I am looking for a reliable Indian spice partner. Please send the latest lab reports and export pricing for your ${productName}.`
+      `I am looking for a reliable Indian spice partner. Please send the latest lab reports and export pricing.`
     );
     window.open(`https://wa.me/919550696255?text=${whatsappMessage}`, "_blank");
     toast({ title: "Connecting to WhatsApp..." });
@@ -78,66 +78,104 @@ export default function SpicesPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-24 bg-primary text-white text-center">
-        <div className="container mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter">
-            Authentic Indian Spice Exporter
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-            Discover the soul of Indian cuisine. We export premium, laboratory-tested spices including Turmeric, Cardamom, and Chili to the world's most demanding markets.
-          </p>
-          <Button 
-            onClick={() => handleQuoteClick("General Spice Inquiry")}
-            className="h-16 px-10 bg-white text-primary hover:bg-secondary hover:text-white rounded-full font-bold text-lg transition-all"
-          >
-            Request a Spice Quote <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </div>
-      </section>
-
-      {/* Brand Matter */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-primary mb-8 uppercase tracking-tight">Spices: The Pride of India</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed text-justify">
-              <p>
-                Indian spices have been celebrated for centuries for their unparalleled aroma, flavor, and medicinal properties. At <strong>Shree Bhumi Nature's Best</strong>, we honor this heritage by delivering spices that are pure, honest, and sourced directly from the finest spice clusters in Salem, Guntur, and the Western Ghats.
-              </p>
-              <p>
-                Our quality control process is rigorous. We monitor everything from sun-drying and polishing to final laboratory testing for moisture and volatile oil content. By eliminating middlemen and working directly with farmer groups, we ensure full traceability—allowing our global partners to trust the origin and purity of every pinch.
-              </p>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-primary to-primary/90 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary text-sm font-semibold rounded-full mb-6">
+              Export Category
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              Premium Indian Spices Exporter
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed">
+              Leading exporter of authentic Indian spices including Black Pepper, Turmeric, Cardamom, and more to global markets worldwide.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => handleQuoteClick("General Spice Inquiry")}
+                className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 font-semibold"
+              >
+                Request a Quote <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Link href="/#contact">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary h-12 px-8 font-semibold">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Product Grid - Swipeable on Mobile */}
-      <section className="py-24 bg-primary/5 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex overflow-x-auto pb-10 gap-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:overflow-visible md:pb-0">
+      {/* About Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+              Premium Spice Export from India
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                India is known as the land of spices, producing some of the world's finest aromatic and flavoring ingredients. At <strong>Srinikia Exports</strong>, we source premium spices directly from the best growing regions, ensuring authentic flavor and high potency.
+              </p>
+              <p>
+                Our spices undergo rigorous quality testing including moisture content, volatile oil analysis, and contamination screening to meet international food safety standards. We export to leading food manufacturers, restaurants, and retailers worldwide.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {["ISO Certified", "Lab Tested", "Direct Sourcing"].map((feature, i) => (
+              <div key={i} className="flex items-center gap-3 p-4 bg-muted rounded-lg">
+                <CheckCircle className="w-5 h-5 text-secondary" />
+                <span className="font-medium text-primary">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Grid */}
+      <section className="section-padding bg-muted">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">Our Spice Products</h2>
+            <p className="text-muted-foreground">Premium quality spices sourced directly from Indian farms</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {spices.map((product, idx) => (
-              <div key={idx} className="min-w-[48%] md:min-w-0 snap-center bg-white rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group shrink-0 md:shrink">
-                <div className="relative h-48 md:h-72 overflow-hidden">
-                  <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute top-4 left-4 md:top-6 md:left-6">
-                    <Badge className="bg-secondary text-white rounded-full px-2 py-0.5 md:px-4 md:py-1 text-[8px] md:text-xs font-bold uppercase tracking-widest">Lab Tested</Badge>
+              <div key={idx} className="card-corporate group overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
+                  <Image 
+                    src={product.image} 
+                    alt={product.name} 
+                    fill 
+                    className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-secondary text-white font-medium text-xs">
+                      Premium
+                    </Badge>
                   </div>
                 </div>
-                <div className="p-4 md:p-10">
-                  <h3 className="text-sm md:text-2xl font-bold text-primary mb-2 md:mb-4 uppercase line-clamp-1">{product.name}</h3>
-                  <p className="text-muted-foreground text-[10px] md:text-base mb-4 md:mb-6 leading-relaxed line-clamp-2">{product.description}</p>
-                  <div className="space-y-1 md:space-y-2 mb-4 md:mb-8 border-t border-primary/5 pt-3 md:pt-6">
-                    <p className="text-[8px] md:text-sm font-bold text-secondary uppercase tracking-widest flex items-center gap-1 md:gap-2">
-                      <ChevronRight className="w-3 h-3 md:w-4 md:h-4" /> Origin: {product.origin}
-                    </p>
-                    <p className="text-[8px] md:text-sm font-bold text-primary/40 uppercase tracking-widest flex items-center gap-1 md:gap-2">
-                      <ChevronRight className="w-3 h-3 md:w-4 md:h-4" /> Grade: {product.grade}
-                    </p>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                    {product.description}
+                  </p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-4 pb-4 border-b border-border">
+                    <span className="flex items-center gap-1">
+                      <CheckCircle className="w-3 h-3 text-secondary" />
+                      {product.origin}
+                    </span>
+                    <span className="font-medium">{product.grade}</span>
                   </div>
                   <Button 
                     onClick={() => handleQuoteClick(product.name)}
-                    className="w-full h-9 md:h-14 bg-primary hover:bg-secondary rounded-full font-bold uppercase tracking-widest text-[8px] md:text-xs"
+                    className="w-full bg-secondary hover:bg-secondary/90"
                   >
                     Get Quote
                   </Button>
@@ -145,6 +183,22 @@ export default function SpicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-primary text-white">
+        <div className="container-custom text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Import Indian Spices?</h2>
+          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+            Contact us today for competitive pricing and reliable delivery of premium Indian spices to your market.
+          </p>
+          <Button 
+            onClick={() => handleQuoteClick("General Inquiry")}
+            className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 font-semibold"
+          >
+            Get Started <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
         </div>
       </section>
 

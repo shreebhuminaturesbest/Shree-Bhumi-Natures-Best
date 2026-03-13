@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -68,138 +67,164 @@ export default function ToolsPage() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-32 pb-20 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">Internal Tools</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Content & SEO Manager</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Leverage AI to generate high-converting marketing copy and SEO-optimized meta tags for SBNB Global products.
-          </p>
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-br from-primary to-primary/90 text-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block px-4 py-1.5 bg-secondary/20 text-secondary text-sm font-semibold rounded-full mb-6">
+              Internal Tools
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+              Content & SEO Manager
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 mb-0 leading-relaxed">
+              Leverage AI to generate high-converting marketing copy and SEO-optimized meta tags for your products.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <Tabs defaultValue="marketing" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 mb-12 h-14 bg-primary/5 rounded-full p-1">
-            <TabsTrigger value="marketing" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white">
-              <Sparkles className="w-4 h-4 mr-2" /> Marketing Copy
-            </TabsTrigger>
-            <TabsTrigger value="seo" className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white">
-              <Search className="w-4 h-4 mr-2" /> SEO Tags
-            </TabsTrigger>
-          </TabsList>
+      <div className="section-padding">
+        <div className="container-custom">
+          <Tabs defaultValue="marketing" className="max-w-4xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="marketing" className="py-3">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Marketing Copy
+              </TabsTrigger>
+              <TabsTrigger value="seo" className="py-3">
+                <Search className="w-4 h-4 mr-2" />
+                SEO Meta Tags
+              </TabsTrigger>
+            </TabsList>
 
-          <TabsContent value="marketing">
-            <Card className="border-none shadow-xl rounded-[2rem]">
-              <CardHeader className="bg-primary/5 rounded-t-[2rem] p-8">
-                <CardTitle className="text-2xl text-primary">Marketing Snippet Generator</CardTitle>
-                <CardDescription>Enter product features to generate premium descriptions.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-8 space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold">Product Details / Features</label>
-                  <Textarea 
-                    placeholder="e.g. Organic Turmeric Powder, High Curcumin, Direct from Salem, Lab Tested..."
-                    className="min-h-[120px]"
-                    value={details}
-                    onChange={(e) => setDetails(e.target.value)}
-                  />
-                </div>
-                <Button 
-                  onClick={handleMarketingSubmit} 
-                  disabled={loading || !details} 
-                  className="w-full h-12 bg-secondary text-primary hover:bg-primary hover:text-white"
-                >
-                  {loading ? "Generating..." : "Generate Marketing Copy"}
-                </Button>
-
-                {marketingResult && (
-                  <div className="mt-10 space-y-6 animate-fade-in-up">
-                    <h3 className="font-bold text-xl text-primary flex items-center gap-2">
-                      <Layout className="w-5 h-5" /> Generated Copy
-                    </h3>
-                    <div className="space-y-4">
-                      {marketingResult.copy.map((text: string, i: number) => (
-                        <div key={i} className="p-6 bg-primary/5 rounded-2xl relative group">
-                          <p className="text-lg leading-relaxed">{text}</p>
-                          <button 
-                            onClick={() => copyToClipboard(text)}
-                            className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity p-2 bg-white rounded-lg shadow-sm"
-                          >
-                            <Copy className="w-4 h-4 text-primary" />
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                    {marketingResult.suggestedKeywords && (
-                      <div className="pt-6">
-                        <h4 className="font-semibold mb-3">Suggested Keywords</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {marketingResult.suggestedKeywords.map((kw: string) => (
-                            <Badge key={kw} variant="outline" className="border-secondary text-secondary">{kw}</Badge>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+            {/* Marketing Copy Tab */}
+            <TabsContent value="marketing">
+              <Card className="border-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-secondary" />
+                    Generate Marketing Copy
+                  </CardTitle>
+                  <CardDescription>
+                    Enter product details to generate compelling marketing copy
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Product Details</label>
+                    <Textarea 
+                      value={details}
+                      onChange={(e) => setDetails(e.target.value)}
+                      placeholder="e.g., Fresh Alphonso mangoes from Maharashtra, premium quality, export grade A..."
+                      className="min-h-[120px]"
+                    />
                   </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
+                  <Button 
+                    onClick={handleMarketingSubmit} 
+                    disabled={loading || !details}
+                    className="w-full bg-secondary hover:bg-secondary/90"
+                  >
+                    {loading ? "Generating..." : "Generate Copy"}
+                  </Button>
+                  
+                  {marketingResult && (
+                    <div className="mt-6 p-4 bg-muted rounded-lg">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium">Generated Copy:</span>
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={() => copyToClipboard(marketingResult.copy)}
+                        >
+                          {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                        </Button>
+                      </div>
+                      <p className="text-sm whitespace-pre-wrap">{marketingResult.copy}</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
 
-          <TabsContent value="seo">
-             <Card className="border-none shadow-xl rounded-[2rem]">
-              <CardHeader className="bg-primary/5 rounded-t-[2rem] p-8">
-                <CardTitle className="text-2xl text-primary">SEO Meta Tag Generator</CardTitle>
-                <CardDescription>Input page content to get optimized titles and descriptions.</CardDescription>
-              </CardHeader>
-              <CardContent className="p-8 space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold">Page/Product Content</label>
-                  <Textarea 
-                    placeholder="Paste the main content of the page here..."
-                    className="min-h-[120px]"
-                    value={pageContent}
-                    onChange={(e) => setPageContent(e.target.value)}
-                  />
-                </div>
-                <Button 
-                  onClick={handleSeoSubmit} 
-                  disabled={loading || !pageContent} 
-                  className="w-full h-12 bg-secondary text-primary hover:bg-primary hover:text-white"
-                >
-                  {loading ? "Optimizing..." : "Generate SEO Tags"}
-                </Button>
-
-                {seoResult && (
-                  <div className="mt-10 space-y-6 animate-fade-in-up">
-                    <div className="p-8 bg-primary text-white rounded-[2rem] space-y-6">
+            {/* SEO Tab */}
+            <TabsContent value="seo">
+              <Card className="border-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Search className="w-5 h-5 text-secondary" />
+                    Generate SEO Meta Tags
+                  </CardTitle>
+                  <CardDescription>
+                    Enter page content to generate optimized meta title and description
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Page Content</label>
+                    <Textarea 
+                      value={pageContent}
+                      onChange={(e) => setPageContent(e.target.value)}
+                      placeholder="Enter the main content or description of your page..."
+                      className="min-h-[120px]"
+                    />
+                  </div>
+                  <Button 
+                    onClick={handleSeoSubmit} 
+                    disabled={loading || !pageContent}
+                    className="w-full bg-secondary hover:bg-secondary/90"
+                  >
+                    {loading ? "Generating..." : "Generate SEO Tags"}
+                  </Button>
+                  
+                  {seoResult && (
+                    <div className="mt-6 p-4 bg-muted rounded-lg space-y-4">
                       <div>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-bold text-secondary uppercase tracking-widest">Meta Title</span>
-                          <button onClick={() => copyToClipboard(seoResult.metaTitle)}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-sm font-medium">Title:</span>
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => copyToClipboard(seoResult.metaTitle)}
+                          >
                             <Copy className="w-4 h-4" />
-                          </button>
+                          </Button>
                         </div>
-                        <p className="text-xl font-bold">{seoResult.metaTitle}</p>
-                        <p className="text-xs text-white/40 mt-1">{seoResult.metaTitle.length} characters (Optimal: &lt; 60)</p>
+                        <p className="text-sm">{seoResult.metaTitle}</p>
                       </div>
-                      <div className="pt-6 border-t border-white/10">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-bold text-secondary uppercase tracking-widest">Meta Description</span>
-                          <button onClick={() => copyToClipboard(seoResult.metaDescription)}>
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-sm font-medium">Description:</span>
+                          <Button 
+                            variant="ghost" 
+                            size="sm"
+                            onClick={() => copyToClipboard(seoResult.metaDescription)}
+                          >
                             <Copy className="w-4 h-4" />
-                          </button>
+                          </Button>
                         </div>
-                        <p className="text-lg text-white/80">{seoResult.metaDescription}</p>
-                        <p className="text-xs text-white/40 mt-1">{seoResult.metaDescription.length} characters (Optimal: &lt; 160)</p>
+                        <p className="text-sm">{seoResult.metaDescription}</p>
                       </div>
+                      {seoResult.keywords && (
+                        <div>
+                          <span className="text-sm font-medium block mb-2">Keywords:</span>
+                          <div className="flex flex-wrap gap-2">
+                            {seoResult.keywords.map((kw: string, i: number) => (
+                              <Badge key={i} variant="secondary">{kw}</Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
+
       <Footer />
     </main>
   );
