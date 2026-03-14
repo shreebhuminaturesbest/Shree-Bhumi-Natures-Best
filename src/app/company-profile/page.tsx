@@ -225,7 +225,7 @@ export default function CompanyProfilePage() {
             Our Global Reach
           </h2>
           <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            We export to 25+ countries across 4 continents
+            We export to 10+ countries across 4 continents
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[

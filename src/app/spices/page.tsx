@@ -58,6 +58,13 @@ const spices = [
     description: "Hand-picked cloves, rich in eugenol and natural aroma.",
     origin: "Southern India",
     grade: "Hand Picked"
+  },
+  {
+    name: "Coriander",
+    image: "/spices/Coriander.jpg",
+    description: "Fresh and aromatic coriander seeds, carefully sourced and processed.",
+    origin: "Rajasthan/Gujarat",
+    grade: "Premium Quality"
   }
 ];
 
