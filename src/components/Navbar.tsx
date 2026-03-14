@@ -108,7 +108,7 @@ export function Navbar() {
       >
         <div className="container-custom flex items-center justify-between">
           <Link href="/" className="relative h-12 w-40">
-            <Image src={logoUrl} alt="Srinikia Exports" fill className="object-contain object-left" priority />
+            <Image src={logoUrl} alt="Shree bhumi Nature's best Pvt Ltd" fill className="object-contain object-left" priority />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -164,7 +164,7 @@ export function Navbar() {
       >
         <div className="container-custom py-4 flex items-center justify-between border-b border-white/10">
           <Link href="/" onClick={() => setIsOpen(false)} className="relative h-10 w-36 bg-white p-1 rounded">
-            <Image src={logoUrl} alt="Srinikia Exports" fill className="object-contain" />
+            <Image src={logoUrl} alt="Shree bhumi Nature's best Pvt Ltd" fill className="object-contain" />
           </Link>
           <button className="text-white p-2" onClick={() => setIsOpen(false)}>
             <X className="w-7 h-7" />

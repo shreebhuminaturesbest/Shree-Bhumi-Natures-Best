@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { CheckCircle2, Globe, Heart, ShieldCheck, Sprout, Award, Truck, Factory } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function About() {
   const welcomeImageUrl = "https://ml0k8npvi8h7.i.optimole.com/cb:K2_q.4551d/w:1000/h:667/q:mauto/f:best/https://freshlineexim.com/wp-content/uploads/2023/02/5a874b9ace.jpg";
@@ -26,7 +27,7 @@ export function About() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                About Srinikia Exports
+                About Shree bhumi Nature's best Pvt Ltd
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -56,6 +57,14 @@ export function About() {
                   <span className="font-medium text-sm">Competitive Pricing</span>
                 </div>
               </div>
+
+              <div className="mt-8">
+                <Link href="/about">
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-semibold">
+                    More About Us
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="lg:w-1/2">
               <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-lg">
@@ -75,7 +84,7 @@ export function Certifications() {
     { name: "FSSAI", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/fssai.png" },
     { name: "Spices Board", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/spices-board-india.png" },
     { name: "MSME", url: "https://jbrotherexports.com/wp-content/uploads/2023/02/MSME.png" },
-    { name: "Global Quality", url: "https://etimg.etb2bimg.com/photo-86677229.cms" },
+    { name: "Quality", url: "https://etimg.etb2bimg.com/photo/86677229.cms" },
     { name: "DGFT", url: "https://content.dgft.gov.in/NCSTC/ncstc-sliderlogo/dgft-logo.jpg" },
     { name: "ISO Certified", url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvL40lg1W82c9jrAWVbR4UFZeQvOGZ3b0c3g&s" }
   ];
@@ -88,7 +97,7 @@ export function Certifications() {
         </div>
         <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
           {logos.map((logo, i) => (
-            <div key={i} className="relative w-20 h-20 md:w-24 md:h-24 grayscale hover:grayscale-0 transition-all">
+            <div key={i} className="relative w-20 h-20 md:w-24 md:h-24 transition-all hover:scale-110">
               <Image src={logo.url} alt={logo.name} fill className="object-contain" sizes="96px" />
             </div>
           ))}

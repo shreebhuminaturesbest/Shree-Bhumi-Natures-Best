@@ -12,42 +12,42 @@ import { useToast } from "@/hooks/use-toast";
 const vegetables = [
   {
     name: "Fresh Tomatoes",
-    image: "https://images.unsplash.com/photo-1546470427-227c736c2841?q=80&w=800",
+    image: "/vegetables/Tomatos.jpg",
     description: "Premium sun-ripened tomatoes, hand-picked for global standards.",
     origin: "Southern India",
     grade: "Export Grade A"
   },
   {
     name: "Red & Pink Onions",
-    image: "https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=800",
+    image: "/vegetables/red onions.jpg",
     description: "Firm onions with excellent pungency and shelf life.",
     origin: "Nashik, Maharashtra",
     grade: "Premium Export"
   },
   {
     name: "White Garlic",
-    image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=800",
+    image: "/vegetables/white garlic.jpg",
     description: "Bold cloves with strong aroma and natural nourishment.",
     origin: "Madhya Pradesh",
     grade: "Superior"
   },
   {
     name: "Natural Potatoes",
-    image: "https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?q=80&w=800",
+    image: "/vegetables/potatos.jpg",
     description: "Multi-purpose export quality potatoes with minimal moisture.",
     origin: "Uttar Pradesh",
     grade: "Grade A"
   },
   {
     name: "Mixed Peppers",
-    image: "https://images.unsplash.com/photo-1592924357228-91a4bcadcfea?q=80&w=800",
+    image: "/vegetables/mixed pepper.jpg",
     description: "Crisp and colorful peppers grown under natural sunlight.",
     origin: "Karnataka",
     grade: "Top Selection"
   },
   {
     name: "Fresh Carrots",
-    image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=800",
+    image: "/vegetables/carrots.jpg",
     description: "Sweet and crunchy carrots, cleaned and graded for export.",
     origin: "Ooty, Tamil Nadu",
     grade: "Premium"
@@ -60,7 +60,7 @@ export default function VegetablesPage() {
   const handleQuoteClick = (productName: string) => {
     const whatsappMessage = encodeURIComponent(
       `*Export Inquiry: ${productName}*\n\n` +
-      `I am interested in importing premium vegetables from Srinikia Exports. Please provide current export rates and capacity details.`
+      `I am interested in importing premium vegetables from Shree bhumi Nature's best Pvt Ltd. Please provide current export rates and capacity details.`
     );
     window.open(`https://wa.me/919550696255?text=${whatsappMessage}`, "_blank");
     toast({ title: "Connecting to WhatsApp..." });
@@ -109,7 +109,7 @@ export default function VegetablesPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                India's diverse climate allows us to grow a wide variety of vegetables year-round. At <strong>Srinikia Exports</strong>, we leverage our direct farmer network to source only the freshest produce. Our vegetables are grown in nutrient-rich soil hub regions across India, ensuring they retain their natural flavor and nutritional value.
+                India's diverse climate allows us to grow a wide variety of vegetables year-round. At <strong>Shree bhumi Nature's best Pvt Ltd</strong>, we leverage our direct farmer network to source only the freshest produce. Our vegetables are grown in nutrient-rich soil hub regions across India, ensuring they retain their natural flavor and nutritional value.
               </p>
               <p>
                 From sorting and grading to moisture-proof packaging, every step of our process is designed to maintain global export standards. We ensure that our perishables reach international markets in peak condition through efficient cold-chain logistics and pre-shipment quality audits.

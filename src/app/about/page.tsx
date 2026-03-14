@@ -42,7 +42,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  At <strong>Srinikia Exports</strong>, we pride ourselves on exporting the freshest, tastiest produce from India. With a deep focus on quality control and customer satisfaction, we provide end-to-end services, including procurement, packing, and delivery. Trust us to deliver excellence in every shipment.
+                  At <strong>Shree bhumi Nature's best Pvt Ltd</strong>, we pride ourselves on exporting the freshest, tastiest produce from India. With a deep focus on quality control and customer satisfaction, we provide end-to-end services, including procurement, packing, and delivery. Trust us to deliver excellence in every shipment.
                 </p>
                 <p>
                   We are a premier export company based in Hyderabad, India that specializes in the export of premium-quality fresh fruits, vegetables, spices, and grains. We are dedicated to providing our customers with the freshest and most flavorful produce sourced from the fertile lands of India.
@@ -107,6 +107,66 @@ export default function AboutPage() {
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Commitment to Quality */}
+      <section className="section-padding bg-muted">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Our Commitment to Quality</h2>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              At Shree Bhumi Nature's Best Pvt Ltd, quality is at the heart of everything we do. From selecting the right farms to ensuring proper packaging and timely delivery, every step of our process is carefully monitored to maintain freshness and international export standards. Our experienced team works closely with farmers and suppliers to ensure that only the best produce reaches our customers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Strong Farmer Network */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Strong Farmer Network</h2>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              We maintain strong relationships with trusted farmers across India who follow responsible and sustainable farming practices. This close collaboration allows us to source fresh produce directly from farms, ensuring superior quality, traceability, and consistent supply throughout the year.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Packaging & Logistics */}
+      <section className="section-padding bg-muted">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Advanced Packaging & Logistics</h2>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              Our packaging process is designed to preserve freshness and protect the quality of the produce during transportation. With efficient logistics and reliable shipping partners, we ensure that our products reach international markets safely, on time, and in excellent condition.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Reach */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Global Reach</h2>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              We proudly serve clients across multiple international markets by delivering high-quality agricultural products from India. Our focus on reliability, transparency, and customer satisfaction has helped us build long-term partnerships with buyers around the world.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer-Centric Approach */}
+      <section className="section-padding bg-muted">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Customer-Centric Approach</h2>
+            <p className="text-muted-foreground leading-relaxed text-center">
+              Customer satisfaction is our top priority. We understand the diverse requirements of global markets and offer flexible packaging, customized orders, and reliable export services to meet our clients' specific needs.
+            </p>
           </div>
         </div>
       </section>

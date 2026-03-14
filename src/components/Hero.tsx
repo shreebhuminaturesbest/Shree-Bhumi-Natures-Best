@@ -11,7 +11,7 @@ export function Hero() {
       <div className="relative w-full" style={{ aspectRatio: '966 / 403' }}>
         <Image
           src={heroImageUrl}
-          alt="Srinikia Exports"
+          alt="Shree bhumi Nature's best Pvt Ltd"
           fill
           className="object-cover object-center"
           priority

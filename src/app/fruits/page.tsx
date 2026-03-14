@@ -12,35 +12,35 @@ import { useToast } from "@/hooks/use-toast";
 const fruits = [
   {
     name: "Alphonso Mangoes",
-    image: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=800",
+    image: "/fruits/Alphonso Mangoes.jpg",
     description: "King of fruits. Rich, creamy, and tender textured mangoes.",
     origin: "Maharashtra",
     grade: "Grade A"
   },
   {
     name: "Bhagwa Pomegranate",
-    image: "https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?q=80&w=800",
+    image: "/fruits/Bhagwa Pomegranate.jpg",
     description: "Deep red pearls with soft seeds and high juice content.",
     origin: "Maharashtra",
     grade: "Export Quality"
   },
   {
     name: "Cavendish Banana",
-    image: "https://images.unsplash.com/photo-1603833665858-e61d17a86224?q=80&w=800",
+    image: "/fruits/Cavendish Banana.jpg",
     description: "Large, firm, and uniform bananas for international markets.",
     origin: "Andhra Pradesh",
     grade: "Premium"
   },
   {
     name: "Thompson Grapes",
-    image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=800",
+    image: "/fruits/Thompson Grapes.jpg",
     description: "Sweet seedless green grapes with crisp texture.",
     origin: "Nashik",
     grade: "AAA Export"
   },
   {
     name: "Fresh Pink Guava",
-    image: "https://images.unsplash.com/photo-1536511132770-e5088929944b?q=80&w=800",
+    image: "/fruits/Fresh Pink Guava.jpg",
     description: "Aromatic pink guavas, rich in Vitamin C and fiber.",
     origin: "Southern India",
     grade: "Select Quality"
@@ -53,7 +53,7 @@ export default function FruitsPage() {
   const handleQuoteClick = (productName: string) => {
     const whatsappMessage = encodeURIComponent(
       `*Export Inquiry: ${productName}*\n\n` +
-      `I am interested in importing premium fruits from Srinikia Exports. Please provide current export rates and availability details.`
+      `I am interested in importing premium fruits from Shree bhumi Nature's best Pvt Ltd. Please provide current export rates and availability details.`
     );
     window.open(`https://wa.me/919550696255?text=${whatsappMessage}`, "_blank");
     toast({ title: "Connecting to WhatsApp..." });
@@ -102,7 +102,7 @@ export default function FruitsPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                India's tropical and subtropical climate makes it ideal for growing a wide variety of premium fruits. At <strong>Srinikia Exports</strong>, we source the finest fruits directly from certified orchards and farmers.
+                India's tropical and subtropical climate makes it ideal for growing a wide variety of premium fruits. At <strong>Shree bhumi Nature's best Pvt Ltd</strong>, we source the finest fruits directly from certified orchards and farmers.
               </p>
               <p>
                 We maintain strict quality control from harvest to delivery, ensuring proper cold chain management and careful packaging to preserve freshness during international shipping.

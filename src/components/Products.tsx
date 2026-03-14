@@ -24,28 +24,28 @@ const categories = ["Vegetables", "Grains", "Spices", "Fruits"];
 
 const products = [
   // Vegetables
-  { name: "Fresh Tomatoes", category: "Vegetables", image: "https://images.unsplash.com/photo-1546470427-227c736c2841?q=80&w=800", description: "Premium sun-ripened tomatoes.", origin: "Southern India", grade: "Export Grade A" },
-  { name: "Red Onions", category: "Vegetables", image: "https://images.unsplash.com/photo-1508747703725-719777637510?q=80&w=800", description: "Firm onions with excellent shelf life.", origin: "Maharashtra", grade: "Premium" },
-  { name: "White Garlic", category: "Vegetables", image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?q=80&w=800", description: "Bold cloves with strong aroma.", origin: "Madhya Pradesh", grade: "Superior" },
-  { name: "Fresh Potatoes", category: "Vegetables", image: "https://images.unsplash.com/photo-1518977676601-b53f02ac6d31?q=80&w=800", description: "Multi-purpose export quality.", origin: "Uttar Pradesh", grade: "Grade A" },
+  { name: "Fresh Tomatoes", category: "Vegetables", image: "/vegetables/Tomatos.jpg", description: "Premium sun-ripened tomatoes.", origin: "Southern India", grade: "Export Grade A" },
+  { name: "Red Onions", category: "Vegetables", image: "/vegetables/red onions.jpg", description: "Firm onions with excellent shelf life.", origin: "Maharashtra", grade: "Premium" },
+  { name: "White Garlic", category: "Vegetables", image: "/vegetables/white garlic.jpg", description: "Bold cloves with strong aroma.", origin: "Madhya Pradesh", grade: "Superior" },
+  { name: "Fresh Potatoes", category: "Vegetables", image: "/vegetables/potatos.jpg", description: "Multi-purpose export quality.", origin: "Uttar Pradesh", grade: "Grade A" },
 
   // Grains
-  { name: "Aromatic Rice", category: "Grains", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800", description: "Premium aged rice varieties.", origin: "North India", grade: "Supreme" },
-  { name: "Premium Wheat", category: "Grains", image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=800", description: "High-protein wheat grains.", origin: "Central India", grade: "Sharbati" },
-  { name: "Golden Corn", category: "Grains", image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=800", description: "Cleaned and dried yellow maize.", origin: "Andhra Pradesh", grade: "Export" },
-  { name: "Finger Millets", category: "Grains", image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800", description: "Traditional superfood grains.", origin: "Maharashtra", grade: "Premium" },
+  { name: "Aromatic Rice", category: "Grains", image: "/grains/aromotic_rice.jpg", description: "Premium aged rice varieties.", origin: "North India", grade: "Supreme" },
+  { name: "Premium Wheat", category: "Grains", image: "/grains/Premium Wheat.jpg", description: "High-protein wheat grains.", origin: "Central India", grade: "Sharbati" },
+  { name: "Golden Corn", category: "Grains", image: "/grains/Golden Corn.jpg", description: "Cleaned and dried yellow maize.", origin: "Andhra Pradesh", grade: "Export" },
+  { name: "Finger Millets", category: "Grains", image: "/grains/Finger Millets.jpg", description: "Traditional superfood grains.", origin: "Maharashtra", grade: "Premium" },
 
   // Spices
-  { name: "Black Pepper", category: "Spices", image: "https://images.unsplash.com/photo-1532431110031-15b565780598?q=80&w=800", description: "Bold and pungent peppercorns.", origin: "Kerala", grade: "Bold 550GL" },
-  { name: "Turmeric Powder", category: "Spices", image: "https://images.unsplash.com/photo-1698556735172-1b5b3cd9d2ce?q=80&w=800", description: "High-curcumin turmeric.", origin: "Salem", grade: "Export A" },
-  { name: "Cumin Seeds", category: "Spices", image: "https://images.unsplash.com/photo-1530588625438-7c5504971c2a?q=80&w=800", description: "Aromatic with high oil content.", origin: "Gujarat", grade: "Premium" },
-  { name: "Green Cardamom", category: "Spices", image: "https://images.unsplash.com/photo-1599307734173-03027b872b53?q=80&w=800", description: "Exquisite green cardamom pods.", origin: "Kerala", grade: "8mm+ Bold" },
+  { name: "Black Pepper", category: "Spices", image: "/spices/Black Pepper.jpg", description: "Bold and pungent peppercorns.", origin: "Kerala", grade: "Bold 550GL" },
+  { name: "Turmeric Powder", category: "Spices", image: "/spices/Turmeric Powder.jpg", description: "High-curcumin turmeric.", origin: "Salem", grade: "Export A" },
+  { name: "Cumin Seeds", category: "Spices", image: "/spices/Cumin Seeds.jpg", description: "Aromatic with high oil content.", origin: "Gujarat", grade: "Premium" },
+  { name: "Green Cardamom", category: "Spices", image: "/spices/Green Cardamom.png", description: "Exquisite green cardamom pods.", origin: "Kerala", grade: "8mm+ Bold" },
 
   // Fruits
-  { name: "Alphonso Mangoes", category: "Fruits", image: "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=800", description: "King of fruits - rich and creamy.", origin: "Maharashtra", grade: "Grade A" },
-  { name: "Pomegranate", category: "Fruits", image: "https://images.unsplash.com/photo-1541344999736-83eca872f2fa?q=80&w=800", description: "Deep red pearls.", origin: "Maharashtra", grade: "Export" },
-  { name: "Cavendish Banana", category: "Fruits", image: "https://images.unsplash.com/photo-1603833665858-e61d17a86224?q=80&w=800", description: "Large and firm bananas.", origin: "Andhra Pradesh", grade: "Premium" },
-  { name: "Thompson Grapes", category: "Fruits", image: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=800", description: "Sweet seedless grapes.", origin: "Nashik", grade: "AAA" },
+  { name: "Alphonso Mangoes", category: "Fruits", image: "/fruits/Alphonso Mangoes.jpg", description: "King of fruits - rich and creamy.", origin: "Maharashtra", grade: "Grade A" },
+  { name: "Pomegranate", category: "Fruits", image: "/fruits/Bhagwa Pomegranate.jpg", description: "Deep red pearls.", origin: "Maharashtra", grade: "Export" },
+  { name: "Cavendish Banana", category: "Fruits", image: "/fruits/Cavendish Banana.jpg", description: "Large and firm bananas.", origin: "Andhra Pradesh", grade: "Premium" },
+  { name: "Thompson Grapes", category: "Fruits", image: "/fruits/Thompson Grapes.jpg", description: "Sweet seedless grapes.", origin: "Nashik", grade: "AAA" },
 ];
 
 export function Products() {
@@ -152,8 +152,8 @@ export function Products() {
         </Tabs>
 
         <div className="text-center mt-12">
-          <Link href="/#contact" className="btn-primary inline-flex items-center gap-2">
-            View All Products <ArrowRight className="w-4 h-4" />
+          <Link href={`/${activeTab.toLowerCase()}`} className="btn-primary inline-flex items-center gap-2">
+            View All {activeTab} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

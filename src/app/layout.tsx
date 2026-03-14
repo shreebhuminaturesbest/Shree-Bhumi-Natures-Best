@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Srinikia Exports | Premium Indian Agricultural Products Exporter',
-  description: 'Srinikia Exports - Leading global exporter of authentic Indian spices, fresh vegetables, premium grains, and fresh fruits. Delivering quality produce to worldwide markets.',
+  title: 'Shree bhumi Nature\'s best Pvt Ltd | Premium Indian Agricultural Products Exporter',
+  description: 'Shree bhumi Nature\'s best Pvt Ltd - Leading global exporter of authentic Indian spices, fresh vegetables, premium grains, and fresh fruits. Delivering quality produce to worldwide markets.',
   keywords: 'Indian exports, spices, vegetables, grains, fruits, agricultural products, international trade',
 };
 

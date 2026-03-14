@@ -36,7 +36,7 @@ export function Footer() {
         <div className="flex justify-center mb-6">
           <Link href="/" className="inline-block">
             <div className="relative h-12 w-44 bg-white p-2 rounded-lg shadow-lg">
-              <Image src={logoUrl} alt="Srinikia Exports" fill className="object-contain" sizes="176px" />
+              <Image src={logoUrl} alt="Shree bhumi Nature's best Pvt Ltd" fill className="object-contain" sizes="176px" />
             </div>
           </Link>
         </div>
@@ -140,7 +140,7 @@ export function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/80 text-sm">© {currentYear} Srinikia Exports. All Rights Reserved.</p>
+          <p className="text-white/80 text-sm">© {currentYear} Shree bhumi Nature's best Pvt Ltd. All Rights Reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="text-white/80 hover:text-secondary text-sm transition-colors">Privacy Policy</a>
             <a href="#" className="text-white/80 hover:text-secondary text-sm transition-colors">Terms & Conditions</a>

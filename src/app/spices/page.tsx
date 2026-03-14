@@ -12,49 +12,49 @@ import { useToast } from "@/hooks/use-toast";
 const spices = [
   {
     name: "Black Pepper",
-    image: "https://images.unsplash.com/photo-1532431110031-15b565780598?q=80&w=800",
+    image: "/spices/Black Pepper.jpg",
     description: "Bold and pungent black peppercorns from the Western Ghats.",
     origin: "Kerala",
     grade: "Bold 550GL"
   },
   {
     name: "Turmeric Powder",
-    image: "https://images.unsplash.com/photo-1698556735172-1b5b3cd9d2ce?q=80&w=800",
+    image: "/spices/Turmeric Powder.jpg",
     description: "High-curcumin turmeric, sun-dried and finely polished.",
     origin: "Salem/Erode",
     grade: "Export A-Grade"
   },
   {
     name: "Cumin Seeds",
-    image: "https://images.unsplash.com/photo-1530588625438-7c5504971c2a?q=80&w=800",
+    image: "/spices/Cumin Seeds.jpg",
     description: "Aromatic and machine-cleaned cumin seeds with high oil content.",
     origin: "Gujarat",
     grade: "Premium Eagle"
   },
   {
     name: "Green Cardamom",
-    image: "https://images.unsplash.com/photo-1599307734173-03027b872b53?q=80&w=800",
+    image: "/spices/Green Cardamom.png",
     description: "Exquisite green cardamom pods with intense natural fragrance.",
     origin: "Idukki, Kerala",
     grade: "8mm+ Bold"
   },
   {
     name: "Cinnamon Bark",
-    image: "https://images.unsplash.com/photo-1614734892376-74e6f6630044?q=80&w=800",
+    image: "/spices/Cinnamon Bark.jpg",
     description: "Pure and sweet cinnamon sticks, perfect for gourmet exports.",
     origin: "Southern India",
     grade: "Penta/Alba"
   },
   {
     name: "Dried Red Chili",
-    image: "https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=800",
+    image: "/spices/Dried Red Chili.jpg",
     description: "Fiery red chilies with natural color and heat levels.",
     origin: "Guntur, Andhra Pradesh",
     grade: "Premium Teja"
   },
   {
     name: "Natural Cloves",
-    image: "https://images.unsplash.com/photo-1590401819777-628f8059868e?q=80&w=800",
+    image: "/spices/Natural Cloves.jpg",
     description: "Hand-picked cloves, rich in eugenol and natural aroma.",
     origin: "Southern India",
     grade: "Hand Picked"
@@ -116,7 +116,7 @@ export default function SpicesPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                India is known as the land of spices, producing some of the world's finest aromatic and flavoring ingredients. At <strong>Srinikia Exports</strong>, we source premium spices directly from the best growing regions, ensuring authentic flavor and high potency.
+                India is known as the land of spices, producing some of the world's finest aromatic and flavoring ingredients. At <strong>Shree bhumi Nature's best Pvt Ltd</strong>, we source premium spices directly from the best growing regions, ensuring authentic flavor and high potency.
               </p>
               <p>
                 Our spices undergo rigorous quality testing including moisture content, volatile oil analysis, and contamination screening to meet international food safety standards. We export to leading food manufacturers, restaurants, and retailers worldwide.

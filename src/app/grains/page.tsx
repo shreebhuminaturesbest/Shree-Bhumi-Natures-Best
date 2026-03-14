@@ -12,42 +12,42 @@ import { useToast } from "@/hooks/use-toast";
 const grains = [
   {
     name: "Aromatic Rice",
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=800",
+    image: "/grains/aromotic_rice.jpg",
     description: "Premium aged rice varieties with exquisite aroma and length.",
     origin: "North India",
     grade: "Supreme"
   },
   {
     name: "Premium Wheat",
-    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=800",
+    image: "/grains/Premium Wheat.jpg",
     description: "High-protein wheat grains sourced directly from farm clusters.",
     origin: "Central India",
     grade: "Sharbati"
   },
   {
     name: "Golden Corn",
-    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=800",
+    image: "/grains/Golden Corn.jpg",
     description: "Cleaned and dried yellow maize for food and feed industries.",
     origin: "Andhra Pradesh",
     grade: "Standard Export"
   },
   {
     name: "Pearl Barley",
-    image: "https://images.unsplash.com/photo-1601314112185-334be10878ca?q=80&w=800",
+    image: "/grains/Pearl Barley.jpg",
     description: "Nutritious barley grains processed to preserve natural goodness.",
     origin: "Rajasthan",
     grade: "Export Ready"
   },
   {
     name: "Finger Millets",
-    image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800",
+    image: "/grains/Finger Millets.jpg",
     description: "Traditional superfood grains for the health-conscious global market.",
     origin: "Maharashtra",
     grade: "Premium"
   },
   {
     name: "Sorghum Grains",
-    image: "https://images.unsplash.com/photo-1605333396915-47ed6b68a00e?q=80&w=800",
+    image: "/grains/Sorghum Grains.jpg",
     description: "Naturally grown white and yellow sorghum, rich in minerals.",
     origin: "Telangana",
     grade: "High Quality"
@@ -60,7 +60,7 @@ export default function GrainsPage() {
   const handleQuoteClick = (productName: string) => {
     const whatsappMessage = encodeURIComponent(
       `*Export Inquiry: ${productName}*\n\n` +
-      `I am interested in importing premium grains from Srinikia Exports. Please share the latest specifications and export pricing.`
+      `I am interested in importing premium grains from Shree bhumi Nature's best Pvt Ltd. Please share the latest specifications and export pricing.`
     );
     window.open(`https://wa.me/919550696255?text=${whatsappMessage}`, "_blank");
     toast({ title: "Connecting to WhatsApp..." });
@@ -109,7 +109,7 @@ export default function GrainsPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                India is one of the world's largest producers of grains, with a diverse range of high-quality rice, wheat, and millets. At <strong>Srinikia Exports</strong>, we partner directly with farmers to ensure the best quality grains reach global markets.
+                India is one of the world's largest producers of grains, with a diverse range of high-quality rice, wheat, and millets. At <strong>Shree bhumi Nature's best Pvt Ltd</strong>, we partner directly with farmers to ensure the best quality grains reach global markets.
               </p>
               <p>
                 Our grains are processed using state-of-the-art machinery, cleaned, sorted, and packaged to maintain their nutritional value and freshness during international transit.
