@@ -4,7 +4,7 @@ import React from 'react';
 
 const features = [
   { value: "7+", label: "Years Experience", description: "Serving global markets with excellence" },
-  { value: "25+", label: "Global Clients", description: "Trusted partners worldwide" },
+  { value: "10+", label: "Global Clients", description: "Trusted partners worldwide" },
   { value: "100+", label: "Farm Partners", description: "Direct sourcing network" },
   { value: "50+", label: "Products", description: "Wide product range" },
 ];

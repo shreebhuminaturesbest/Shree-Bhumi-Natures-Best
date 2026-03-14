@@ -110,7 +110,7 @@ export function Certifications() {
 export function WhyChooseUs() {
   const points = [
     "Integrated Farm-to-Fork traceability and quality control systems.",
-    "B2B specialized logistics network serving 25+ global markets.",
+    "B2B specialized logistics network serving 10+ global markets.",
     "Certified laboratory testing for every product batch for maximum purity.",
     "Direct-from-source model to ensure fair and competitive pricing.",
     "Sustainable procurement practices supporting over 100 local farm clusters."

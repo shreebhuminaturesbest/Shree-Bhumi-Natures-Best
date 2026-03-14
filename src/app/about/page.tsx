@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { icon: Users, value: "100+", label: "Farm Partners" },
-              { icon: Globe, value: "25+", label: "Countries Served" },
+              { icon: Globe, value: "10+", label: "Countries Served" },
               { icon: Award, value: "7+", label: "Years Experience" },
               { icon: ShieldCheck, value: "50+", label: "Products" }
             ].map((stat, i) => (
