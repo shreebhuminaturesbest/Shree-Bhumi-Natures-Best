@@ -91,7 +91,7 @@ export default function VegetablesPage() {
                 Request a Quote <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Link href="/#contact">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary h-12 px-8 font-semibold">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white h-12 px-8 font-semibold">
                   Contact Us
                 </Button>
               </Link>
