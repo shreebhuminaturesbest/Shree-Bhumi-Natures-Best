@@ -37,7 +37,7 @@ const products = [
 
   // Spices
   { name: "Black Pepper", category: "Spices", image: "/spices/Black Pepper.jpg", description: "Bold and pungent peppercorns.", origin: "Kerala", grade: "Bold 550GL" },
-  { name: "Turmeric Powder", category: "Spices", image: "/spices/Turmeric Powder.jpg", description: "High-curcumin turmeric.", origin: "Salem", grade: "Export A" },
+  { name: "Turmeric", category: "Spices", image: "/spices/Turmeric Powder.jpg", description: "High-curcumin turmeric.", origin: "Nizamabad, Telangana", grade: "Export A" },
   { name: "Cumin Seeds", category: "Spices", image: "/spices/Cumin Seeds.jpg", description: "Aromatic with high oil content.", origin: "Gujarat", grade: "Premium" },
   { name: "Green Cardamom", category: "Spices", image: "/spices/Green Cardamom.png", description: "Exquisite green cardamom pods.", origin: "Kerala", grade: "8mm+ Bold" },
 
