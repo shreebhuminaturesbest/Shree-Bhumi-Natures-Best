@@ -52,7 +52,7 @@ export function Footer() {
           <a href="https://www.instagram.com/shreebhuminaturesbest?igsh=MTZjb2U2dmloMXRxNA%3D%3D" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:scale-110 transition-all duration-300">
             <Instagram className="w-4 h-4" />
           </a>
-          <a href="#" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:scale-110 transition-all duration-300">
+          <a href="https://www.linkedin.com/in/shree-bhumi-natures-best-03581a3b7/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:scale-110 transition-all duration-300">
             <Linkedin className="w-4 h-4" />
           </a>
         </div>
