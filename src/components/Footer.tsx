@@ -114,8 +114,19 @@ export function Footer() {
                   <MapPin className="w-4 h-4 text-secondary" />
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs uppercase tracking-wide mb-1">Address</p>
-                  <p className="text-white text-sm">Hyderabad, Telangana, India</p>
+                  <p className="text-white/60 text-xs uppercase tracking-wide mb-1">Corporate Office</p>
+                  <p className="text-white text-sm">Green Park, Jeedimetla</p>
+                  <p className="text-white text-sm">Hyderabad, Telangana, India 500067</p>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start">
+                <div className="w-9 h-9 bg-secondary/20 rounded-full flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 text-secondary" />
+                </div>
+                <div>
+                  <p className="text-white/60 text-xs uppercase tracking-wide mb-1">Registered Office</p>
+                  <p className="text-white text-sm">48/48 Papaiah Yadav Nagar Colony</p>
+                  <p className="text-white text-sm">Chintal, Hyderabad, Telangana 500055</p>
                 </div>
               </li>
               <li className="flex gap-3 items-center">
